@@ -17,7 +17,7 @@ class ZoneAdminForm(ModelForm):
         fields = '__all__'
 
 class ZoneAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'office',)
+    list_display = ('id', 'name')
     list_filter  = ('id',)
     form = ZoneAdminForm
   

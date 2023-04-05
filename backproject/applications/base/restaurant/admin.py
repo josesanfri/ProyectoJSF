@@ -11,13 +11,13 @@ from applications.base.restaurant.models import Restaurant, MediaRestaurant
 # Register your models here.
 class RestaurantAdmin(admin.ModelAdmin):
     fieldsets = (
-        (_('Main'), {'fields': ('slug_restaurant')}),
+        (_('Main'), {'fields': ['slug_restaurant']}),
         (_('Basic features'), {
             'fields': ('address', 'square_meters', ),
         }),
         (_('Options'), {'fields': ('is_managed', 'is_multireserve')}),
         (_('CRM features'), {'fields': ('caption_user', 'management_user')}),
-        (_('Others'), {'fields': ('description')}),
+        (_('Others'), {'fields': ['description']}),
     )
 
     readonly_fields = ('created', 'updated')

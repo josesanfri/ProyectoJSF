@@ -11,7 +11,7 @@ from applications.base.location.models import Address
 from applications.base.timestamp.models import Timestamp
 from applications.base.user.models import User
 from applications.base.department.models import Department
-from .functions import document_directory_path, profile_image_directory_path, interest_image_path
+from .functions import profile_image_directory_path
 from .managers import ProfileManager
 
 # python imports

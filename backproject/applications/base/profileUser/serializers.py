@@ -9,7 +9,7 @@ from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer, PrimaryKeyRelatedField
 
 # Local imports
-from .models import CommercialProfile, StaffProfile, CustomerProfile
+from .models import StaffProfile, CustomerProfile
 from applications.base.user.models import User
 from applications.base.location.models import Address
 from applications.base.location.serializers import AddressSerializer

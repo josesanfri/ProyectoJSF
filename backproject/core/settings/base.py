@@ -20,14 +20,20 @@ DJANGO_APPS = (
 BASE_APPS = tuple(
     map( lambda x: 'applications.base.' + x, 
         (
+            'department',
             # 'subscription',
             'user',
             'timestamp',
             # 'learningArchives',
             'location',
             'profileUser',
+            'restaurant',
         )
     )
+)
+
+SCRIPT_APPS = ( 
+    'applications.scripts',
 )
 
 THIRD_PARTY_APPS = (
@@ -38,7 +44,7 @@ THIRD_PARTY_APPS = (
     "django_filters",
 )
 
-INSTALLED_APPS = DJANGO_APPS + BASE_APPS + THIRD_PARTY_APPS
+INSTALLED_APPS = DJANGO_APPS + BASE_APPS + SCRIPT_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
