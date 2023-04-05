@@ -6,12 +6,19 @@ from applications.base.user.models import User
 
 class IsCustomerOrAdminUser(BasePermission):
     """
-    Allows access only to renter users or admin users.
+    Allows access only to customer users or admin users.
     """
 
     def has_permission(self, request, view):
         return (request.user.type_user == User.CUSTOMER or request.user.is_staff)
     
+class IsAdminUser(BasePermission):
+    """
+    Allows access only to owner users.
+    """
+
+    def has_permission(self, request, view):
+        return (request.user.is_staff)
     
 class IsObjAuthorOrStaff(BasePermission):
     """

@@ -4,6 +4,7 @@ from rest_framework.serializers import ModelSerializer, Serializer
 
 # Local imports 
 from .models import User
+from applications.base.profileUser.serializers import (CustomerProfileSerializer, StaffProfileSerializer,)
 
 # Create your serializers here
 ## GENERIC USER SERIALIZERS ##
@@ -24,6 +25,20 @@ class EmailUserSerializer(ModelSerializer):
         model = User
         fields = ['email']
         extra_kwargs = {'email': {'read_only': True}}
+
+## CUSTOMER SERIALIZERS ##
+class CustomerSerializer(ModelSerializer):
+    customerprofile = CustomerProfileSerializer(many=False)
+    class Meta:
+        model = User
+        exclude = ['password', 'is_superuser', 'is_staff']
+
+## STAFF USER SERIALIZER ##
+class StaffSerializer(ModelSerializer):
+    staffprofile = StaffProfileSerializer(many=False)
+    class Meta:
+        model = User
+        exclude = ['password', 'is_superuser', 'is_staff']
 
 
 ## SPECIFIC SERIALIZERS FOR LOGIN & SIGN-UP ##

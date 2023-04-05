@@ -9,7 +9,7 @@ from applications.base.timestamp.models import Timestamp
 # Create your models here.
 class Zone(Timestamp):
     """
-    This class represents an operations area, it allows us to manage the properties among different offices and filter in main search
+    This class represents an operations area, it allows us to manage the restaurants and filter in main search
     """
     name = models.CharField(_('Zone name'), max_length=100, null=False, unique=True, db_index=True)
     description = models.TextField(_('Description'))

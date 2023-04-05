@@ -32,7 +32,7 @@ class AbstractProfileAdmin(admin.ModelAdmin):
         abstract = True
 
 
-# Renter profile
+# Customer profile
 class CustomerProfileForm(ModelForm):
     description = CharField(widget=Textarea, required=False)
     

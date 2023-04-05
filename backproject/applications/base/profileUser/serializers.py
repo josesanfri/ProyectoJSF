@@ -24,15 +24,8 @@ class CustomerProfileSerializer(ModelSerializer):
         model = CustomerProfile
         fields = '__all__'
 
-class PendingReserveCustomerProfileSerializer(ModelSerializer):
-    """Used to give information to an owner of it's possible renters, if the reserve status == PENDING
-    """
-    class Meta:
-        model = CustomerProfile
-        fields = ['first_name', 'age']
-
 class ConfirmedReserveCustomerProfileSerializer(ModelSerializer):
-    """Used to give information to an owner of it's possible renters, if the reserve status == CONFIRMED
+    """Used to give information to an staff of it's possible customers, if the reserve status == CONFIRMED
     """
 
     class Meta:
@@ -40,11 +33,9 @@ class ConfirmedReserveCustomerProfileSerializer(ModelSerializer):
         fields = ['first_name', 'last_name', 'age', 'prefix_phone', 'phone']
 
 class CreateCustomerProfileSerializer(ModelSerializer):
-    """Serializer used to Create, Retrieve, Update & Destroy a renter profile
+    """Serializer used to Create, Retrieve, Update & Destroy a customer profile
 
     Raises:
-        serializers.ValidationError: Incorrect document number
-        serializers.ValidationError: Incorrect passport number
         serializers.ValidationError: Other errors
     """
     user = PrimaryKeyRelatedField(many = False, queryset = User.objects.filter(type_user = User.CUSTOMER))
@@ -87,11 +78,9 @@ class StaffProfileSerializer(ModelSerializer):
 
 # Views Serializers
 class ViewCustomerProfileSerializer(ModelSerializer):
-    """Serializer used to Retrieve, Update & Destroy a renter profile
+    """Serializer used to Retrieve, Update & Destroy a customer profile
 
     Raises:
-        serializers.ValidationError: Incorrect document number
-        serializers.ValidationError: Incorrect passport number
         serializers.ValidationError: Other errors
     """
     user = PrimaryKeyRelatedField(many = False, read_only=True)

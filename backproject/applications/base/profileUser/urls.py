@@ -10,7 +10,7 @@ from .viewsets import (CustomerProfileViewSet, StaffProfileViewSet)
 from .views import CreateCustomerProfileView, RetrieveUpdateDestroyCustomerProfileView
 # Router registe
 router = DefaultRouter()
-router.register(r'renter', CustomerProfileViewSet)
+router.register(r'customer', CustomerProfileViewSet)
 router.register(r'staff', StaffProfileViewSet)
 
 urlpatterns = [
