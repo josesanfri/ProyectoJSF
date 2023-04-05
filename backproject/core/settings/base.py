@@ -28,6 +28,7 @@ BASE_APPS = tuple(
             'location',
             'profileUser',
             'restaurant',
+            'lead'
         )
     )
 )

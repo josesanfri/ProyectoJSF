@@ -23,6 +23,5 @@ urlpatterns = [
 
     # Base Models Urls
     path('', include('applications.base.user.urls')),
-
 ]
 
