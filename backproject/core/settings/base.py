@@ -17,6 +17,20 @@ DJANGO_APPS = (
     'django.contrib.postgres',
 )
 
+BASE_APPS = tuple(
+    map( lambda x: 'applications.base.' + x, 
+        (
+            # 'subscription',
+            'user',
+            'timestamp',
+        )
+    )
+)
+
+SCRIPT_APPS = ( 
+    'applications.scripts',
+)
+
 THIRD_PARTY_APPS = (
     'corsheaders',
     'rest_framework',
@@ -25,7 +39,7 @@ THIRD_PARTY_APPS = (
     "django_filters",
 )
 
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS
+INSTALLED_APPS = DJANGO_APPS + BASE_APPS + SCRIPT_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -37,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'backproject.urls'
+ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
     {
@@ -55,9 +69,9 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backproject.wsgi.application'
+WSGI_APPLICATION = 'core.wsgi.application'
 
-ASGI_APPLICATION = 'backproject.asgi.application'
+ASGI_APPLICATION = 'core.asgi.application'
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -75,6 +89,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'userApp.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
