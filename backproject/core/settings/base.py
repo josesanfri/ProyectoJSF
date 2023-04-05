@@ -20,9 +20,15 @@ DJANGO_APPS = (
 BASE_APPS = tuple(
     map( lambda x: 'applications.base.' + x, 
         (
+            'department',
             # 'subscription',
             'user',
             'timestamp',
+            # 'learningArchives',
+            'location',
+            'profileUser',
+            'restaurant',
+            'lead'
         )
     )
 )

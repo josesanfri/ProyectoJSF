@@ -107,9 +107,9 @@ def user_logout(request):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated, IsCustomerOrAdminUser,],)
-def check_renter(request):
+def check_customer(request):
     '''
-    Check if the user authenticated who make the request is Renter or Staff.
+    Check if the user authenticated who make the request is Customer or Staff.
     
     if Ok return status = 200
     else return status = 404

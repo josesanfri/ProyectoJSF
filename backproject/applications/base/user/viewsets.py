@@ -3,7 +3,7 @@ from rest_framework import viewsets, filters
 
 # Local imports
 from .models import User
-from .serializers import UserSerializer , CustomerSerializer, StaffSerializer
+from .serializers import UserSerializer, CustomerSerializer, StaffSerializer
 
 # Create your viewsets here
 class UserViewSet(viewsets.ModelViewSet):
