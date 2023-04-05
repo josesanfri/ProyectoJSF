@@ -32,7 +32,6 @@ class Address(Timestamp):
     floor = models.CharField(_('Floor'), max_length=20, blank=True)
     stair = models.CharField(_('Stair'), max_length=10, blank=True)
     door = models.CharField(_('Door'), max_length=10, blank=True)
-    room_identifier = models.CharField (_('Room'), max_length=10, null=True, blank=True)
     postal_code = models.CharField(_('Postal code'), max_length=10, null=False)
     latitude = models.DecimalField(_('Latitude'), max_digits=9, decimal_places=6, null=True)
     longitude = models.DecimalField(_('Longitude'), max_digits=9, decimal_places=6, null=True)

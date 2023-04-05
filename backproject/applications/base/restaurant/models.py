@@ -21,7 +21,6 @@ class AbstractRestaurant(Timestamp):
     name_restaurant = models.CharField('Name Restaurant', max_length=100, null=False)
     square_meters = models.PositiveSmallIntegerField(_('Square meters'), null=False)
     primary_phone = models.CharField(_('Primary phone'), max_length=16, null=False)
-    secondary_phone = ArrayField(models.CharField(max_length=16, blank=True), verbose_name=_('Secondary phones'))
     description = models.TextField(_('Description'), null=True, blank=True)
     slug_restaurant = models.SlugField(_('Slug'), max_length=100, unique=True, null=True, blank=True)
     
@@ -41,7 +40,6 @@ class Restaurant(AbstractRestaurant):
     is_managed = models.BooleanField(_('Managed'), default=False)
     management_user = models.ForeignKey(to=User, on_delete=SET_NULL, null=True, blank=True, related_name="%(class)s_managed", verbose_name=_('Management user'))
     caption_user = models.ForeignKey(to=User, on_delete=SET_NULL, null=True, blank=True, related_name="%(class)s_captured", verbose_name=_('Caption user'))
-    is_multireserve = models.BooleanField(_('Multirreserve restaurant'), default=False)
 
     class Meta:
         verbose_name = _('Restaurant')

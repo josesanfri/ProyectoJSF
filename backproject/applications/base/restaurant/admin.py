@@ -15,7 +15,7 @@ class RestaurantAdmin(admin.ModelAdmin):
         (_('Basic features'), {
             'fields': ('address', 'square_meters', ),
         }),
-        (_('Options'), {'fields': ('is_managed', 'is_multireserve')}),
+        (_('Options'), {'fields': ['is_managed']}),
         (_('CRM features'), {'fields': ('caption_user', 'management_user')}),
         (_('Others'), {'fields': ['description']}),
     )

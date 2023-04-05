@@ -51,7 +51,7 @@ class RetrieveRestaurantSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Restaurant
-        exclude = ['is_multireserve', 'is_managed', 'created_by', 'updated_by']
+        exclude = ['is_managed', 'created_by', 'updated_by']
 
     def to_representation(self, instance):         
         ret = super().to_representation(instance)
