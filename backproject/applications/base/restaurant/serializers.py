@@ -32,7 +32,7 @@ class ListRestaurantSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Restaurant
-        fields = ['id', 'slug_restaurant', 'media_restaurant', 'address']
+        fields = ['id', 'slug_restaurant', 'name_restaurant', 'media_restaurant', 'address']
 
     def get_media_restaurant(self,instance):
         media_restaurant_instances = instance.media_restaurant.filter(is_cover = True)
@@ -85,7 +85,16 @@ class RestaurantModelSerializer(serializers.ModelSerializer):
             setattr(instance, key, value)
         instance.save()
         return instance
-  
+    
+class ReserveListRestaurantSerializer(serializers.ModelSerializer):
+    """
+    Restaurant serializer used in reserves view
+    """
+    address = SimpleAddressSerializer()
+
+    class Meta:
+        model = Restaurant
+        fields = ['id', 'name_restaurant', 'slug_restaurant', 'address']
 
 ## MEDIA RESTAURANT SERIALIZERS ##
 class MediaRestaurantSerializer(serializers.ModelSerializer):
