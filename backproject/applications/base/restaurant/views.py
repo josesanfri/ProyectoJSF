@@ -15,10 +15,9 @@ from rest_framework.generics import ListAPIView, CreateAPIView , RetrieveUpdateD
 from rest_framework.response import Response
 
 # Local imports
-from .serializers import ( RestaurantModelSerializer, RetrieveRestaurantSerializer , ListRestaurantSerializer , ExtendedRestaurantSerializer ,
+from .serializers import ( RestaurantModelSerializer, RetrieveRestaurantSerializer , ListRestaurantSerializer,
                             MediaRestaurantSerializer )
 from .models import Restaurant , MediaRestaurant
-from .filters import RestaurantFilter
 from applications.utils.permissions import IsAdminUser, IsObjAuthorOrStaff
 
 # Create your views here.
@@ -26,7 +25,6 @@ from applications.utils.permissions import IsAdminUser, IsObjAuthorOrStaff
 class ListRestaurantView(ListAPIView):
     permission_classes = [AllowAny]
     serializer_class = ListRestaurantSerializer
-    filterset_class = RestaurantFilter
 
     def get_queryset(self):
         return Restaurant.objects.all()

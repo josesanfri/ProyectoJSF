@@ -30,7 +30,7 @@ class AbstractRestaurant(Timestamp):
     def save(self, *args, **kwargs):
         super(AbstractRestaurant, self).save(*args, **kwargs)
         if not self.slug_restaurant:
-            self.slug_restaurant = slugify(self.address.street + '-' + self.address.city + '-' + str(self.id))
+            self.slug_restaurant = slugify(self.name_restaurant + '-' + self.address.street + '-' + self.address.city + '-' + str(self.id))
             self.save()
 
     class Meta:

@@ -32,7 +32,7 @@ class ListRestaurantSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Restaurant
-        fields = ['id', 'slug_restaurant', 'media_restaurant', 'address']
+        fields = ['id', 'slug_restaurant', 'name_restaurant', 'media_restaurant', 'address']
 
     def get_media_restaurant(self,instance):
         media_restaurant_instances = instance.media_restaurant.filter(is_cover = True)
