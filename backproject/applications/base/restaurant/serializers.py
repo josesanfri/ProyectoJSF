@@ -85,7 +85,16 @@ class RestaurantModelSerializer(serializers.ModelSerializer):
             setattr(instance, key, value)
         instance.save()
         return instance
-  
+    
+class ReserveListRestaurantSerializer(serializers.ModelSerializer):
+    """
+    Restaurant serializer used in reserves view
+    """
+    address = SimpleAddressSerializer()
+
+    class Meta:
+        model = Restaurant
+        fields = ['id', 'name_restaurant', 'slug_restaurant', 'address']
 
 ## MEDIA RESTAURANT SERIALIZERS ##
 class MediaRestaurantSerializer(serializers.ModelSerializer):

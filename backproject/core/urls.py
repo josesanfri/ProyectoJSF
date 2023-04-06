@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('applications.base.department.urls')),
     path('', include('applications.base.profileUser.urls')),
     path('', include('applications.base.restaurant.urls')),
+    path('', include('applications.base.reserve.urls')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
