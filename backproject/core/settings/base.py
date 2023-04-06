@@ -30,6 +30,7 @@ BASE_APPS = tuple(
             'restaurant',
             'lead',
             'reserve',
+            'plate',
         )
     )
 )
