@@ -11,7 +11,7 @@ from applications.base.restaurant.models import Restaurant, MediaRestaurant
 # Register your models here.
 class RestaurantAdmin(admin.ModelAdmin):
     fieldsets = (
-        (_('Main'), {'fields': ['slug_restaurant']}),
+        (_('Main'), {'fields': ('name_restaurant', 'slug_restaurant')}),
         (_('Basic features'), {
             'fields': ('address', 'square_meters', ),
         }),

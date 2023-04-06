@@ -2,7 +2,7 @@
 from rest_framework import serializers
 
 # Local imports
-from .models import JobApplication , ContactForm
+from .models import JobApplication, ContactForm
 
 class JobApplicationSerializer(serializers.ModelSerializer):
     
