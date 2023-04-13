@@ -6,8 +6,8 @@ from rest_framework.routers import DefaultRouter
 
 # Local imports
 from .viewsets import (CustomerProfileViewSet, StaffProfileViewSet)
-
 from .views import CreateCustomerProfileView, RetrieveUpdateDestroyCustomerProfileView
+
 # Router registe
 router = DefaultRouter()
 router.register(r'customer', CustomerProfileViewSet)
@@ -21,5 +21,3 @@ urlpatterns = [
     path('api/profile/user/', CreateCustomerProfileView.as_view(), name='customer-profile-create'),
     path('api/profile/user/<int:user>/', RetrieveUpdateDestroyCustomerProfileView.as_view(), name='customer-profile-detail'),
 ]
-
-

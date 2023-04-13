@@ -1,3 +1,4 @@
+# Django imports
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.utils.translation import gettext_lazy as _
@@ -8,16 +9,9 @@ from applications.base.timestamp.models import Timestamp
 
 # Create your models here.
 class User(AbstractBaseUser, PermissionsMixin, Timestamp):
-    """An abstract class to define a custom User
-
-    Inheritances:
-        AbstractBaseUser ([model]): User class provided by django
-        PermissionsMixin ([mixin]): Add the fields and methods necessary to support the Group and Permission
-                                models using the ModelBackend
-    """
-
     CUSTOMER = 'CUS'
     STAFF = 'STF'
+
     USER_TYPE_CHOICES = [
         (CUSTOMER, _('Customer')),
         (STAFF, _('Staff'))
@@ -41,5 +35,5 @@ class User(AbstractBaseUser, PermissionsMixin, Timestamp):
         self.email = self.__class__.objects.normalize_email(self.email)
 
     def get_short_name(self):
-        """Return the short name for the user."""
         return self.email
+    

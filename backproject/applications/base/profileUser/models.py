@@ -1,5 +1,6 @@
 # Python imports
 from datetime import date
+import uuid
 
 #Django imports
 from django.db import models
@@ -14,14 +15,12 @@ from applications.base.department.models import Department
 from .functions import profile_image_directory_path
 from .managers import ProfileManager
 
-# python imports
-import uuid
-
 # Create your models here.
 class AbstractProfile(Timestamp):
     MALE = 'M'
     FEMALE = 'F'
     OTHER = 'O'
+
     GENDER_CHOICES = [
         (MALE, _('Male')),
         (FEMALE, _('Female')),
@@ -69,7 +68,3 @@ class StaffProfile(AbstractProfile):
     class Meta:
         verbose_name = _('Staff profile')
         verbose_name_plural = _('Staff profiles')
-
-
-
-

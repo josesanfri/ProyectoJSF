@@ -3,11 +3,9 @@ from django.db import models
 from django.db.models.deletion import CASCADE
 from django.utils.translation import gettext_lazy as _
 
-
 # Local imports
 from applications.base.timestamp.models import Timestamp
 from applications.base.restaurant.models import Restaurant
-
 
 # Create your models here.
 class Department(Timestamp):

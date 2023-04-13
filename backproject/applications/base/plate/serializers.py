@@ -3,11 +3,10 @@ from ast import Name
 from attr import validate
 from rest_framework import serializers
 
+# Local imports
 from .models import Plate
 
 # Create your serializers here
-
-### SERIALIZERS FOR LIST VIEWS ###
 class PlatesSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         ret = super().to_representation(instance)     
@@ -20,3 +19,4 @@ class PlatesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Plate
         fields = '__all__'
+        

@@ -17,7 +17,6 @@ def customer_user(id):
 
     if user.type_user != User.CUSTOMER:
       raise ValidationError(_('%(user)s must be a customer') % {'user' : user})
-
   
 def validate_positive_value(value):
     """Validates if the value is positive

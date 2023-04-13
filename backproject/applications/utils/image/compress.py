@@ -1,7 +1,6 @@
 # Third Party Imports
 from PIL import Image
 
-
 # Functions
 def compress_image(image=None, resize=None, quality=70):
     
@@ -32,4 +31,5 @@ def compress_image(image=None, resize=None, quality=70):
     
     except Exception as e:
         print('Error in compress_image() :\nProblems with the image.\n'+str(e))
-        return 
+        return
+    

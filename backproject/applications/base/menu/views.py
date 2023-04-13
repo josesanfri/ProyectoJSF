@@ -35,11 +35,6 @@ class CreateMenuView(CreateAPIView):
         serializer.save(staff=self.request.user, created_by=self.request.user)
 
     def create(self, request, *args, **kwargs):
-        """Overwritted method to include a success message, we call super method and later update de data dictionary
-            with the message        
-        Returns:
-            Response: response with the models data and a success message 
-        """
         response = super().create(request, *args, **kwargs)
         response.data.update(message=_('Menu successfully created'))
         return response
@@ -53,8 +48,6 @@ class RestrieveUpdateDestroyMenuView(RetrieveUpdateDestroyAPIView):
         return MenusSerializer
 
     def get_serializer(self, *args, **kwargs):
-        """We need to parse self.request.data in case it is a dict or a querydict
-        """
         instance = self.get_object()
         serializer = self.get_serializer_class()
 

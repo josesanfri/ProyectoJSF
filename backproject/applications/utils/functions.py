@@ -14,24 +14,6 @@ def generate_random_string():
     random_string = ''.join(choices(string.ascii_letters + string.digits, k=n))
     return random_string
 
-def generate_two_random_chars():
-    n = 2
-    random_string = ''.join(choices(string.ascii_uppercase, k=n))
-    return random_string
-
-def generate_random_date():
-    start_date = datetime(2020, 1, 1)
-    end_date = datetime(2020, 12, 1)
-
-    time_between_dates = end_date - start_date
-    days_between_dates = time_between_dates.days
-    random_number_of_days = random.randrange(days_between_dates)
-    random_date = start_date + timedelta(days=random_number_of_days)
-
-    print(random_date)
-
-# generate_random_date()
-
 def log_creation(app: str, exc, context):
     """Creates a txt file were we register the errors of the website
 

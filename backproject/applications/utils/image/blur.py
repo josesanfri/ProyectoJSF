@@ -1,7 +1,6 @@
 # Third Party Imports
 from PIL import Image, ImageFilter
 
-
 # Functions
 def blur_image(blur, image=None):
     
@@ -27,3 +26,4 @@ def blur_image(blur, image=None):
     except Exception as e:
         print('Error in blur_image() :\nProblems with the image.\n'+str(e))
         return
+    

@@ -2,8 +2,8 @@
 from django.apps import apps
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from django.utils.translation import pgettext_lazy
 
+# Local imports
 from applications.base.plate.models import Plate
 from applications.base.timestamp.models import Timestamp
 

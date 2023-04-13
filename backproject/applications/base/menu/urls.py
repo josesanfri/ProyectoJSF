@@ -12,6 +12,7 @@ from .views import ListMenuView, CreateMenuView, RestrieveUpdateDestroyMenuView
 router = DefaultRouter()
 router.register(r'', MenuViewSet)
 
+# Create your urls here.
 urlpatterns = [
     # Suite URLS
     path('api/suite/menu/', include(router.urls), name='menu'),

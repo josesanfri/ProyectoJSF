@@ -12,6 +12,7 @@ from .views import ListPlateView, CreatePlateView, RestrieveUpdateDestroyPlateVi
 router = DefaultRouter()
 router.register(r'', PlateViewSet)
 
+# Create your urls here.
 urlpatterns = [
     # Suite URLS
     path('api/suite/plate/', include(router.urls), name='plate'),

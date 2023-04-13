@@ -9,3 +9,4 @@ from .serializers import MenusSerializer
 class MenuViewSet(viewsets.ModelViewSet):
     queryset = Menu.objects.all()
     serializer_class = MenusSerializer
+    

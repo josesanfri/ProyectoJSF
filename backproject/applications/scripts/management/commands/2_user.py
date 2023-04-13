@@ -35,5 +35,4 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS('Successfuly registered user: %s' % user))
 
         print("--- %s  ---" % (time.process_time() - start_time))
-        
-                
+                  

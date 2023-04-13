@@ -16,8 +16,7 @@ class Command(BaseCommand):
       
         start_time = time.process_time()
       
-
-        # Properties
+        # Restaurants
         staff_set = User.objects.filter(type_user=User.STAFF)
         address_set = Address.objects.all()
 
@@ -28,7 +27,7 @@ class Command(BaseCommand):
 
             restaurant = Restaurant()
             restaurant.address = address_set[random.randint(0, (len(address_set)-1))]
-            restaurant.name_restaurant = "La esquina Gourmet",
+            restaurant.name_restaurant = 'La esquina Gourmet',
             restaurant.square_meters = random.randint(40,150)
             restaurant.caption_user = staff_set[random.randint(0, (len(staff_set)-1))]
             restaurant.primary_phone = str(random.randint(100000000, 999999999));
@@ -38,13 +37,3 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS('Successfuly registered restaurant: %s' % restaurant))
 
         print("--- %s  ---" % (time.process_time() - start_time)) 
-
-
-
-
-
-
-
-
-        
-

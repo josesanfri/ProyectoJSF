@@ -14,7 +14,7 @@ router.register(r'users', UserViewSet, basename='user-viewset')
 router.register(r'customer', CustomerViewSet, basename='customer-viewset')
 router.register(r'staff', StaffViewSet, basename='staff-viewset')
 
-# The API URLs are now determined automatically by the router
+# Create your urls here.
 urlpatterns = [
     # Viewsets
     path('api/suite/user/', include(router.urls), name='user-viewset'),
