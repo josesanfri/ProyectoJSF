@@ -12,7 +12,7 @@ from applications.base.location.models import Address
 from applications.utils.image.format import restaurant_formatter_image
 from .functions import restaurant_image_path
 
-# TODO Put next 3 imports in her place
+# Put next 3 imports in her place
 from django.core.files.base import ContentFile
 
 # Create your models here.
