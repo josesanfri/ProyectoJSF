@@ -16,7 +16,7 @@ from applications.base.location.serializers import AddressSerializer
 
 
 # Create your serializers here
-## CUSTOMER PROFILE SERIALIZERS ##
+## CUSTOMER PROFILE SERIALIZERS
 class CustomerProfileSerializer(ModelSerializer):
     address = AddressSerializer()
     
@@ -25,25 +25,16 @@ class CustomerProfileSerializer(ModelSerializer):
         fields = '__all__'
 
 class ConfirmedReserveCustomerProfileSerializer(ModelSerializer):
-    """Used to give information to an staff of it's possible customers, if the reserve status == CONFIRMED
-    """
-
     class Meta:
         model = CustomerProfile
         fields = ['first_name', 'last_name', 'age', 'prefix_phone', 'phone']
 
 class CreateCustomerProfileSerializer(ModelSerializer):
-    """Serializer used to Create, Retrieve, Update & Destroy a customer profile
-
-    Raises:
-        serializers.ValidationError: Other errors
-    """
     user = PrimaryKeyRelatedField(many = False, queryset = User.objects.filter(type_user = User.CUSTOMER))
     address = AddressSerializer()
 
     class Meta:
         model = CustomerProfile
-        # exclude = ['id']
         fields = '__all__'
     
     def to_representation(self, instance):         
@@ -67,7 +58,7 @@ class CreateCustomerProfileSerializer(ModelSerializer):
 
         return customer_profile
 
-## STAFF PROFILE SERIALIZERS ##
+## STAFF PROFILE SERIALIZERS
 class StaffProfileSerializer(ModelSerializer):    
     user = PrimaryKeyRelatedField(many = False, queryset = User.objects.filter(type_user = User.STAFF))
     address = AddressSerializer()
@@ -78,17 +69,11 @@ class StaffProfileSerializer(ModelSerializer):
 
 # Views Serializers
 class ViewCustomerProfileSerializer(ModelSerializer):
-    """Serializer used to Retrieve, Update & Destroy a customer profile
-
-    Raises:
-        serializers.ValidationError: Other errors
-    """
     user = PrimaryKeyRelatedField(many = False, read_only=True)
     address = AddressSerializer()
 
     class Meta:
         model = CustomerProfile
-        # exclude = ['id']
         fields = '__all__'
     
     def to_representation(self, instance):         
@@ -100,7 +85,6 @@ class ViewCustomerProfileSerializer(ModelSerializer):
         return ret
         
     def update(self, instance, validated_data):
-
         if 'address' in validated_data:
             address_data = validated_data.pop('address')
             Address.objects.filter(id=instance.address.id).update(**address_data)

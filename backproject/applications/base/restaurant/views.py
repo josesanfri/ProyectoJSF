@@ -21,7 +21,7 @@ from .models import Restaurant , MediaRestaurant
 from applications.utils.permissions import IsAdminUser, IsObjAuthorOrStaff
 
 # Create your views here.
-## RESTAURANT LIST VIEWS ##
+## RESTAURANT LIST VIEWS
 class ListRestaurantView(ListAPIView):
     permission_classes = [AllowAny]
     serializer_class = ListRestaurantSerializer
@@ -29,7 +29,7 @@ class ListRestaurantView(ListAPIView):
     def get_queryset(self):
         return Restaurant.objects.all()
 
-## RESTAURANT CREATE VIEWS ## 
+## RESTAURANT CREATE VIEWS
 class CreateRestaurantView(CreateAPIView):
     permission_classes = [IsAuthenticated]
     queryset = Restaurant.objects.all()
@@ -38,24 +38,13 @@ class CreateRestaurantView(CreateAPIView):
         serializer.save(created_by=self.request.user)
 
     def create(self, request, *args, **kwargs):
-        """Overwritted method to include a success message, we call super method and later update de data dictionary
-            with the message        
-        Returns:
-            Response: response with the models data and a success message 
-        """
         response = super().create(request, *args, **kwargs)
         response.data.update(message=_('Restaurant successfully created'))
         return response
 
     def get_serializer(self, *args, **kwargs):
-        """We need to parse self.request.data in case it is a dict or a querydict
-
-        Returns:
-            ModelSerializer: serializer for Restaurant
-        """
         if isinstance(self.request.data, QueryDict):
             data_dict = self.request.data.dict()
-
             key_list = ['address']
 
             for key in key_list:
@@ -72,7 +61,6 @@ class RetrieveUpdateDestroyRestaurantView(RetrieveUpdateDestroyAPIView):
     queryset = Restaurant.objects.all()
     multiple_lookup_fields = ('id', 'slug_restaurant')
 
-    
     def get_permissions(self):
         if self.request.method == 'GET':
             self.permission_classes == [AllowAny]
@@ -83,18 +71,11 @@ class RetrieveUpdateDestroyRestaurantView(RetrieveUpdateDestroyAPIView):
     
 
     def get_serializer(self, *args, **kwargs):
-        """We need to parse self.request.data in case it is a dict or a querydict
-
-        Returns:
-            ModelSerializer: serializer for Restaurant
-        """
         instance = self.get_object()
         
         if self.request.method == 'PUT':
             if isinstance(self.request.data, QueryDict):
-        
                 data_dict = self.request.data.dict()
-
                 key_list = ['address']
 
                 for key in key_list:
@@ -111,7 +92,7 @@ class RetrieveUpdateDestroyRestaurantView(RetrieveUpdateDestroyAPIView):
 
         for field in self.multiple_lookup_fields:
             
-            try:   # Get the result with one or more fields.
+            try:
                 filter[field] = self.kwargs[field]
             except Exception:
                 pass
@@ -133,11 +114,8 @@ class RetrieveUpdateDestroyRestaurantView(RetrieveUpdateDestroyAPIView):
         data['message']=_('Restaurant successfully deleted')
         return Response(data=data, status=status.HTTP_200_OK)
 
-## MEDIA RESTAURANT VIEWS ##
+## MEDIA RESTAURANT VIEWS
 class CreateRestaurantImageView(CreateAPIView):
-    """ 
-    View for create a restaurant restaurant image
-    """
     permission_classes = [IsAdminUser]
     serializer_class = MediaRestaurantSerializer
 
@@ -149,18 +127,12 @@ class CreateRestaurantImageView(CreateAPIView):
         return super().create(request, *args, **kwargs)
 
 class RetrieveUpdateDeleteImageView(RetrieveUpdateDestroyAPIView):
-    """ 
-    View for Update and Delete restaurant image
-    """
     permission_classes = [IsObjAuthorOrStaff]
     serializer_class = MediaRestaurantSerializer
     queryset = MediaRestaurant.objects.all()
     lookup_field = 'id'
 
     def update(self, request, *args, **kwargs):
-        """
-         when we update the img we need to delete the old path 
-        """
         try:
             request.data["restaurant"] = kwargs["restaurant"]
             img_path = MediaRestaurant.objects.get(id=kwargs['id']).image
@@ -168,9 +140,6 @@ class RetrieveUpdateDeleteImageView(RetrieveUpdateDestroyAPIView):
         except:
             pass
         
-        """
-         We should have only one cover IMG , in other case the old cover img will be update to false
-        """
         image_cover = MediaRestaurant.objects.filter(restaurant=request.data["restaurant"]).filter(is_cover=True)
        
         if image_cover :

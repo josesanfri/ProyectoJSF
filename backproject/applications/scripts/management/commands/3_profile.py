@@ -31,7 +31,6 @@ class Command(BaseCommand):
         return None
       
       # renters profiles
-      
       for customer in customers :
 
         customer_profile = CustomerProfile.objects.create(
@@ -48,7 +47,6 @@ class Command(BaseCommand):
      
       
       # staff profiles
-
       for stf in staff :
         
         stf_profile = StaffProfile.objects.create(

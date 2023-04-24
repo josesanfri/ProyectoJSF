@@ -20,7 +20,6 @@ from applications.utils.permissions import IsCustomerOrAdminUser
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def user_register(request):
-  
     try:    
         data = {}
         serializer = RegisterSerializer(data=request.data)
@@ -28,7 +27,6 @@ def user_register(request):
         if serializer.is_valid():
             if serializer.data['type_user'] in (User.CUSTOMER):
     
-                # TODO Revisar que funcione
                 user = serializer.create(request.data)
                 token = Token.objects.get_or_create(user=user)[0].key  
                 data["message"] = _('User registered successfully')
@@ -73,7 +71,6 @@ def user_login(request):
         except Exception as e:
             raise ValidationError(_('Incorrect credentials, check if the email and password entered are correct.'))
 
-        
         token = Token.objects.get_or_create(user=user)[0].key
         data["token"] = 'Token ' + token
         
@@ -104,28 +101,14 @@ def user_logout(request):
 
     return Response(data, status=status.HTTP_200_OK)
 
-
 @api_view(['GET'])
 @permission_classes([IsAuthenticated, IsCustomerOrAdminUser,],)
 def check_customer(request):
-    '''
-    Check if the user authenticated who make the request is Customer or Staff.
-    
-    if Ok return status = 200
-    else return status = 404
-    '''
     return Response(status=status.HTTP_200_OK)
-
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated, IsAdminUser,],)
 def check_staff(request):
-    '''
-    Check if the user authenticated who make the request is Staff.
-    
-    if Ok return status = 200
-    else return status = 404
-    '''
     serializer = EmailUserSerializer(data=request.data)
     
     if serializer.is_valid():
@@ -133,4 +116,3 @@ def check_staff(request):
             return Response(status=status.HTTP_200_OK)
         else:
             return Response(status=status.HTTP_404_NOT_FOUND)
-

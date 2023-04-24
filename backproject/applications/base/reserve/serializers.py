@@ -12,11 +12,8 @@ from applications.base.restaurant.serializers import ReserveListRestaurantSerial
 
 
 # Create your serializers here
-
-### SERIALIZERS FOR LIST VIEWS ###
+### SERIALIZERS FOR LIST VIEWS
 class ReserveSerializer(serializers.ModelSerializer):
-    """Reserve serializer used for Listing reserves to Staff Users
-    """
     restaurant = ReserveListRestaurantSerializer(many=False)
     customer = EmailUserSerializer(many=False, required=False)
 
@@ -34,8 +31,6 @@ class ReserveSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class CustomerReserveSerializer(serializers.ModelSerializer):
-    """ Reserve serializer used for listing reserves to Customers
-    """
     restaurant = ReserveListRestaurantSerializer(many=False)
     customer = EmailUserSerializer(many=False, required=False)
 
@@ -51,10 +46,8 @@ class CustomerReserveSerializer(serializers.ModelSerializer):
         model = Reserve
         exclude = ['intern_note', 'type_reserve']
 
-### SERIALIZERS FOR CREATE VIEWS ###
+### SERIALIZERS FOR CREATE VIEWS
 class CreateReserveSerializer(serializers.ModelSerializer):
-    """Serializer used to create reserves by Customer Users
-    """
     restaurant = serializers.PrimaryKeyRelatedField(many=False, queryset = Restaurant.objects.all())
     customer = serializers.PrimaryKeyRelatedField(many=False, queryset = User.objects.filter(type_user=User.CUSTOMER), required=False)
 
@@ -63,8 +56,6 @@ class CreateReserveSerializer(serializers.ModelSerializer):
         fields = ['id', 'restaurant', 'customer', 'num_customers', 'confirmed_date']
 
 class StaffCreateReserveSerializer(serializers.ModelSerializer):
-    """ Serializer used to create reserves by STAFF users, with extra fields
-    """
     restaurant = serializers.PrimaryKeyRelatedField(many=False, queryset = Restaurant.objects.all())
     customer = serializers.PrimaryKeyRelatedField(many=False, queryset = User.objects.filter(type_user=User.CUSTOMER), required=False)
 
@@ -81,11 +72,8 @@ class StaffCreateReserveSerializer(serializers.ModelSerializer):
             pass
         return ret
 
-
-### SERIALIZERS FOR RETRIEVE UPDATE AND DESTROY VIEWS ###
+### SERIALIZERS FOR RETRIEVE UPDATE AND DESTROY VIEWS
 class AbstractReserveModelSerializer(serializers.ModelSerializer):
-    """Abstract Reserve Serializer. This serializer has the same behaviour always, but we change the fields that are displayed
-    depending the user"""
     restaurant = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
     customer = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
 
@@ -108,15 +96,12 @@ class AbstractReserveModelSerializer(serializers.ModelSerializer):
         return instance
 
 class StaffReserveModelSerializer(AbstractReserveModelSerializer):
-    """Reserve serializer for Staff
-    """
     class Meta:
         model = Reserve
         fields = '__all__'
 
 class UserReserveModelSerializer(AbstractReserveModelSerializer):
-    """ Reserve serializer used for Customer Users
-    """
     class Meta:
         model = Reserve
         exclude = ['created', 'created_by', 'updated', 'updated_by', 'intern_note', 'type_reserve']
+        

@@ -14,6 +14,7 @@ router = DefaultRouter()
 router.register(r'rent', RestaurantViewSet)
 router.register(r'media', MediaRestaurantViewSet)
 
+# Create your urls here.
 urlpatterns = [
     # Viewset urls
     path('api/suite/restaurant/', include(router.urls), name='restaurant'),

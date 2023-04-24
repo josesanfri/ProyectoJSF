@@ -9,3 +9,4 @@ from .serializers import PlatesSerializer
 class PlateViewSet(viewsets.ModelViewSet):
     queryset = Plate.objects.all()
     serializer_class = PlatesSerializer
+    

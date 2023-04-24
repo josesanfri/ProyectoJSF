@@ -7,3 +7,4 @@ class ReserveConfig(AppConfig):
     name = 'applications.base.reserve'
     label = 'reserveApp'
     verbose_name = _('Reserve')
+    

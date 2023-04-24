@@ -13,3 +13,4 @@ class RestaurantViewSet(viewsets.ModelViewSet):
 class MediaRestaurantViewSet(viewsets.ModelViewSet):
     queryset = MediaRestaurant.objects.all()
     serializer_class = MediaRestaurantSerializer
+    

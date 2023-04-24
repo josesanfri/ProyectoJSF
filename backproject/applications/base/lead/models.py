@@ -42,7 +42,6 @@ class JobApplication(AbstractLead):
     def __str__(self):
         return _('%(name)s is looking for a %(type_job)s in %(city)s') % {'name' : self.name, 'type_job' : self.type_job, 'city' : self.city}
 
-
 class ContactForm (AbstractLead):
     surname = models.CharField(_('Last name'), max_length=100)
     information = models.CharField(_('Leave us a message'), max_length=400)
@@ -53,3 +52,4 @@ class ContactForm (AbstractLead):
 
     def __str__(self):
         return _('%(name)s wants contact with us') % {'name' : self.name }
+    

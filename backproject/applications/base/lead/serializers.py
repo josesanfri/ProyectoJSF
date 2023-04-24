@@ -4,6 +4,7 @@ from rest_framework import serializers
 # Local imports
 from .models import JobApplication, ContactForm
 
+# Create your serializers here
 class JobApplicationSerializer(serializers.ModelSerializer):
     
     class Meta:

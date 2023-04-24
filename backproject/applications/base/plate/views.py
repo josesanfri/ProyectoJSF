@@ -1,7 +1,7 @@
 # Python imports
 import json
 
-#  Django imports
+# Django imports
 from django.db.models import Q
 from django.http import QueryDict
 from django.utils.translation import gettext as _
@@ -11,7 +11,7 @@ from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveUpdateDe
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import serializers
 
-# local imports
+# Local imports
 from .models import Plate
 from .serializers import PlatesSerializer
 from applications.utils.permissions import IsObjAuthorOrStaff, IsAdminUser
@@ -35,11 +35,6 @@ class CreatePlateView(CreateAPIView):
         serializer.save(staff=self.request.user, created_by=self.request.user)
 
     def create(self, request, *args, **kwargs):
-        """Overwritted method to include a success message, we call super method and later update de data dictionary
-            with the message        
-        Returns:
-            Response: response with the models data and a success message 
-        """
         response = super().create(request, *args, **kwargs)
         response.data.update(message=_('Plate successfully created'))
         return response
@@ -53,8 +48,6 @@ class RestrieveUpdateDestroyPlateView(RetrieveUpdateDestroyAPIView):
         return PlatesSerializer
 
     def get_serializer(self, *args, **kwargs):
-        """We need to parse self.request.data in case it is a dict or a querydict
-        """
         instance = self.get_object()
         serializer = self.get_serializer_class()
 
@@ -76,3 +69,4 @@ class RestrieveUpdateDestroyPlateView(RetrieveUpdateDestroyAPIView):
         response = super().update(request, *args, **kwargs)
         response.data.update(message=_('Plate successfully edited'))
         return response
+    

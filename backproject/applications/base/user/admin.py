@@ -33,5 +33,4 @@ class CustomUserAdmin(UserAdmin):
             return self.readonly_fields + ('email',)
         return self.readonly_fields
     
-
 admin.site.register(User, CustomUserAdmin)

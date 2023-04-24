@@ -21,3 +21,4 @@ class StaffViewSet(viewsets.ModelViewSet):
     serializer_class = StaffSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['email', 'staffprofile__first_name__unaccent', 'staffprofile__last_name__unaccent', 'staffprofile__phone']
+    

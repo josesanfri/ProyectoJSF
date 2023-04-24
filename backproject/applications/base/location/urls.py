@@ -12,7 +12,7 @@ router = DefaultRouter()
 router.register(r'zone', ZoneViewSet)
 router.register(r'address', AddressViewSet)
 
+# Create your urls here.
 urlpatterns = [
     path('api/suite/location/', include(router.urls))
 ]
-

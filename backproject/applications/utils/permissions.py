@@ -39,4 +39,5 @@ class IsObjAuthorOrStaff(BasePermission):
         elif hasattr(obj, 'customer') and request.user.type_user == User.CUSTOMER:
             return obj.customer == request.user or (request.user in obj.extra_customer.all())
         
-        return False  
+        return False
+    

@@ -12,6 +12,7 @@ from .views import ListReserveView, CreateReserveView, RestrieveUpdateDestroyRes
 router = DefaultRouter()
 router.register(r'', ReserveViewSet)
 
+# Create your urls here.
 urlpatterns = [
     # Suite URLS
     path('api/suite/reserve/', include(router.urls), name='reserve'),

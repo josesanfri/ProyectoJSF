@@ -13,3 +13,4 @@ class CustomerProfileViewSet(viewsets.ModelViewSet):
 class StaffProfileViewSet(viewsets.ModelViewSet):
     queryset = StaffProfile.objects.all()
     serializer_class = StaffProfileSerializer
+    

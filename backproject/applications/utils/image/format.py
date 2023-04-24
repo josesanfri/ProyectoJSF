@@ -1,7 +1,6 @@
 # Third Party Imports
 from PIL import Image
 
-
 # Functions
 def formatter_image(image=None, format='webp'):
     
@@ -26,11 +25,7 @@ def formatter_image(image=None, format='webp'):
         print('Error in formatter_image() :\nProblems with the image.\n'+str(e))
         return
 
-
-    
-
 def restaurant_formatter_image ( image=None , format="webp" ):
-
     from PIL import Image
     from io import BytesIO 
     try:
@@ -45,6 +40,5 @@ def restaurant_formatter_image ( image=None , format="webp" ):
         image_io = BytesIO()
         return (image , image_io , filename)
 
-        # image.save(image_io, format='webp', quality=90)
     except Exception as err:
         print(" Fallo en my_formatter_image : ",err)

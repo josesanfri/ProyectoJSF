@@ -69,3 +69,4 @@ class Command(BaseCommand):
                 address.save()
 
                 self.stdout.write(self.style.SUCCESS('Successfuly inserted Address: %s' % address))
+                

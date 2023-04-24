@@ -1,5 +1,6 @@
+# Django imports
 from django.db import models
-from django.db.models.deletion import SET_NULL, PROTECT
+from django.db.models.deletion import SET_NULL
 from django.utils.translation import gettext_lazy as _
 from django.contrib.postgres.fields import ArrayField
 
@@ -8,9 +9,6 @@ from applications.base.timestamp.models import Timestamp
 
 # Create your models here.
 class Zone(Timestamp):
-    """
-    This class represents an operations area, it allows us to manage the restaurants and filter in main search
-    """
     name = models.CharField(_('Zone name'), max_length=100, null=False, unique=True, db_index=True)
     description = models.TextField(_('Description'))
     assigned_postal_codes = ArrayField(models.CharField(max_length=8, blank=True), verbose_name=_('Assigned postal codes'))
@@ -43,12 +41,11 @@ class Address(Timestamp):
         return (f'{self.street} {self.number}, {self.city}')
 
     def save(self, *args, **kwargs):
-
         try:
             self.zone = Zone.objects.filter(assigned_postal_codes__contains=[self.postal_code])[0]
         except:
             self.zone = None
-        
+
         return super(Address, self).save(*args, **kwargs)
 
     class Meta:
