@@ -1,3 +1,6 @@
+# Python imports
+from datetime import datetime
+
 # Third party imports
 from rest_framework import serializers
 
@@ -7,14 +10,9 @@ from applications.base.location.models import Address
 from applications.base.user.models import User
 from applications.base.location.serializers import SimpleAddressSerializer, AddressSerializer, ExtendedAddressSerializer
 
-# Python imports
-from datetime import datetime
-
 # Create your serializers here
-## RESTAURANT SERIALIZERS ##
+## RESTAURANT SERIALIZERS
 class RestaurantSerializer(serializers.ModelSerializer):
-    """Serielizer used in Viewset
-    """
     class Meta:
         model = Restaurant
         fields = '__all__'
@@ -24,9 +22,6 @@ class RestaurantSerializer(serializers.ModelSerializer):
         return ret
 
 class ListRestaurantSerializer(serializers.ModelSerializer):
-    """
-    Restaurant serializer used in List View 
-    """
     address = SimpleAddressSerializer()
     media_restaurant =  serializers.SerializerMethodField()
     
@@ -43,9 +38,6 @@ class ListRestaurantSerializer(serializers.ModelSerializer):
         return ret
 
 class RetrieveRestaurantSerializer(serializers.ModelSerializer):
-    """
-    Restaurant serializer used for a single restaurant retrieve view in the website.
-    """
     address = ExtendedAddressSerializer(many=False)
     media_restaurant =  serializers.SerializerMethodField()
     
@@ -62,7 +54,6 @@ class RetrieveRestaurantSerializer(serializers.ModelSerializer):
         return ImageUrlSerializer(media_restaurant_instances, many=True).data
 
 class RestaurantModelSerializer(serializers.ModelSerializer):
-    """Restaurant serializer used for create & update the model"""
     address = AddressSerializer()
     
     class Meta:
@@ -87,20 +78,14 @@ class RestaurantModelSerializer(serializers.ModelSerializer):
         return instance
     
 class ReserveListRestaurantSerializer(serializers.ModelSerializer):
-    """
-    Restaurant serializer used in reserves view
-    """
     address = SimpleAddressSerializer()
 
     class Meta:
         model = Restaurant
         fields = ['id', 'name_restaurant', 'slug_restaurant', 'address']
 
-## MEDIA RESTAURANT SERIALIZERS ##
+## MEDIA RESTAURANT SERIALIZERS
 class MediaRestaurantSerializer(serializers.ModelSerializer):
-    """
-    Restaurant serializer used for a media fields from restaurant
-    """
     restaurant = serializers.PrimaryKeyRelatedField(many = False, queryset = Restaurant.objects.all(), required=False)
     
     class Meta:
@@ -117,9 +102,7 @@ class MediaRestaurantSerializer(serializers.ModelSerializer):
             return ret     
 
 class ImageUrlSerializer(serializers.ModelSerializer):
-    """
-    MediaRestaurant nested serializer to show cover image on ListRestaurantSerializer
-    """
     class Meta:
         model = MediaRestaurant
         fields = ["image"]
+        

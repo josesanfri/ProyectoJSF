@@ -13,7 +13,6 @@ class AddressSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class SimpleAddressSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Address
         fields = ['street', 'number', 'city', 'latitude', 'longitude']
@@ -23,8 +22,10 @@ class ZoneSerializer(serializers.ModelSerializer):
         model = Zone
         fields = '__all__'
 
-class ExtendedAddressSerializer(serializers.ModelSerializer):
+class ExtendedAddressSerializer(serializers.ModelSerializer): 
     zone =  serializers.PrimaryKeyRelatedField(many=False, allow_null = True, queryset = Zone.objects.all(), required=False)
+    
     class Meta:
         model = Address
         exclude = ['created', 'updated', 'created_by', 'updated_by']
+        

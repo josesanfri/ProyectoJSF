@@ -15,11 +15,11 @@ from applications.base.restaurant.models import Restaurant
 from applications.base.user.models import User
 from applications.base.timestamp.models import Timestamp
 
-
 # Create your models here.
 class Reserve(Timestamp):
     WEB = 'W'
     RESTAURANT = 'R'
+
     RESERVE_TYPE_CHOICES = [ 
         (WEB, _('Web')),
         (RESTAURANT, _('Restaurant')),
@@ -27,6 +27,7 @@ class Reserve(Timestamp):
 
     CONFIRMED = 'C'
     DENIED = 'D'
+
     RESERVE_STATUS_CHOICES = [ 
         (CONFIRMED, pgettext_lazy('Reserve confirmed', 'Confirmed')),
         (DENIED, _('Denied')),
@@ -48,7 +49,6 @@ class Reserve(Timestamp):
         return _('%(customer)s reserve over %(restaurant)s') % {'customer' : self.customer, 'restaurant' : self.restaurant}
     
     def save(self, *args, **kwargs):
-        # When we confirm a Reserve, we must do some related busines logic
         if self.status == Reserve.CONFIRMED:
             if self.confirmed_date is None:
                 self.confirmed_date = datetime.now()

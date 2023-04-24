@@ -20,7 +20,6 @@ from .filters import ReserveFilter
 from applications.base.user.models import User
 from applications.utils.permissions import IsObjAuthorOrStaff, IsCustomerOrAdminUser
 
-
 # Create your views here.
 class ListReserveView(ListAPIView):
     permission_classes = [IsAuthenticated]
@@ -58,15 +57,9 @@ class CreateReserveView(CreateAPIView):
             serializer.save(customer=self.request.user, created_by=self.request.user)
 
     def create(self, request, *args, **kwargs):
-        """Overwritted method to include a success message, we call super method and later update de data dictionary
-            with the message        
-        Returns:
-            Response: response with the models data and a success message 
-        """
         response = super().create(request, *args, **kwargs)
         response.data.update(message=_('Reserve successfully created'))
         return response
-
 
 class RestrieveUpdateDestroyReserveView(RetrieveUpdateDestroyAPIView):
     permission_classes = [IsObjAuthorOrStaff]
@@ -79,11 +72,6 @@ class RestrieveUpdateDestroyReserveView(RetrieveUpdateDestroyAPIView):
         return StaffReserveModelSerializer
 
     def get_serializer(self, *args, **kwargs):
-        """We need to parse self.request.data in case it is a dict or a querydict
-
-        Returns:
-            ModelSerializer: serializer for Customer Profile
-        """
         instance = self.get_object()
         serializer = self.get_serializer_class()
 

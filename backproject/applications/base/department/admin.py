@@ -1,8 +1,6 @@
 # Django imports
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
-from django.contrib.admin.models import LogEntry
-
 
 # Local imports
 from .models import Department, SubDepartment
@@ -20,4 +18,3 @@ class SubdepartmentAdmin(admin.ModelAdmin):
 
 admin.site.register(Department, DepartmentAdmin)
 admin.site.register(SubDepartment, SubdepartmentAdmin)
-

@@ -22,7 +22,6 @@ class ZoneAdmin(admin.ModelAdmin):
     form = ZoneAdminForm
   
 class AddresAdmin(admin.ModelAdmin):
-
     inlines = [CustomerProfileInline]
 
     class Meta:

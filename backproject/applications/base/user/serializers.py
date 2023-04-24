@@ -7,7 +7,7 @@ from .models import User
 from applications.base.profileUser.serializers import (CustomerProfileSerializer, StaffProfileSerializer,)
 
 # Create your serializers here
-## GENERIC USER SERIALIZERS ##
+## GENERIC USER SERIALIZERS
 class UserSerializer(ModelSerializer):
     class Meta:
         model = User
@@ -19,31 +19,30 @@ class SimpleUserSerializer(ModelSerializer):
         fields = ['id', 'email']
 
 class EmailUserSerializer(ModelSerializer):
-    """ User serializer with only one field: 'email'
-    """
     class Meta:
         model = User
         fields = ['email']
         extra_kwargs = {'email': {'read_only': True}}
 
-## CUSTOMER SERIALIZERS ##
+## CUSTOMER SERIALIZERS
 class CustomerSerializer(ModelSerializer):
     customerprofile = CustomerProfileSerializer(many=False)
+    
     class Meta:
         model = User
         exclude = ['password', 'is_superuser', 'is_staff']
 
-## STAFF USER SERIALIZER ##
+## STAFF USER SERIALIZER
 class StaffSerializer(ModelSerializer):
     staffprofile = StaffProfileSerializer(many=False)
+
     class Meta:
         model = User
         exclude = ['password', 'is_superuser', 'is_staff']
 
 
-## SPECIFIC SERIALIZERS FOR LOGIN & SIGN-UP ##
+## SPECIFIC SERIALIZERS FOR LOGIN & SIGN-UP
 class RegisterSerializer(ModelSerializer):
-    
     class Meta:
         model = User
         fields = ['email', 'password', 'type_user']
@@ -57,7 +56,6 @@ class RegisterSerializer(ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
-
 
 class LoginSerializer(Serializer):
     email = serializers.EmailField()

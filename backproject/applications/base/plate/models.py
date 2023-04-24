@@ -1,19 +1,18 @@
 # Django imports
 from django.apps import apps
 from django.db import models
-from django.db.models.deletion import SET_NULL
 from django.forms import ValidationError
 from django.utils.translation import gettext_lazy as _
-from django.utils.translation import pgettext_lazy
 
+# Local imports
 from applications.base.timestamp.models import Timestamp
 from applications.utils.validators import validate_positive_value
-
 
 class Plate(Timestamp):
     STARTER = 'S'
     MAIN = 'M'
     DESSERT = 'D'
+
     PLATES_TYPE_CHOICES = [ 
         (STARTER, _('Starter')),
         (MAIN, _('Main')),
@@ -31,4 +30,3 @@ class Plate(Timestamp):
     class Meta:
         verbose_name = _('Plate')
         verbose_name_plural = _('Plates')
-

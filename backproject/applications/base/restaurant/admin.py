@@ -4,7 +4,6 @@ from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 
-
 # Local imports
 from applications.base.restaurant.models import Restaurant, MediaRestaurant
 
@@ -37,4 +36,3 @@ class MediaRestaurantAdmin(admin.ModelAdmin):
 
 admin.site.register(Restaurant, RestaurantAdmin)
 admin.site.register(MediaRestaurant, MediaRestaurantAdmin)
-

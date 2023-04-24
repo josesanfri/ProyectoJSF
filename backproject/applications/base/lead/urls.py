@@ -8,10 +8,8 @@ from . import viewsets
 from .views import (JobApplicationListView, JobApplicationCreateView, RetrieveUpdateDeleteJobApplicationView,
                     ContactFormListView, ContactFormCreateView, RetrieveUpdateDestroyContactFormView)
 
-
-# The API URLs are now determined automatically by the router
+# Create your urls here.
 urlpatterns = [
-    
     # Job applications
     path('api/lead/job/', JobApplicationListView.as_view(), name='job-application-list'),
     path('api/lead/job/create/', JobApplicationCreateView.as_view(), name='job-application-create'),
@@ -21,5 +19,4 @@ urlpatterns = [
     path('api/lead/contact/', ContactFormListView.as_view(), name='contact-form-list'),
     path('api/lead/contact/create/', ContactFormCreateView.as_view(), name='contact-form-create'),
     path('api/lead/contact/<int:id>', RetrieveUpdateDestroyContactFormView.as_view(), name='contact-form-update'),
-
 ]

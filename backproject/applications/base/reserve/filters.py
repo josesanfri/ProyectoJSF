@@ -11,3 +11,4 @@ class ReserveFilter(FilterSet):
     class Meta:
         model = Reserve
         fields = ['id', 'status']
+        

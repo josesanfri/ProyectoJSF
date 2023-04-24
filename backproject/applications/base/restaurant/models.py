@@ -12,7 +12,6 @@ from applications.base.location.models import Address
 from applications.utils.image.format import restaurant_formatter_image
 from .functions import restaurant_image_path
 
-# TODO Put next 3 imports in her place
 from django.core.files.base import ContentFile
 
 # Create your models here.
@@ -60,19 +59,16 @@ class MediaRestaurant(Timestamp):
     type_image = models.CharField(_('Image type'), max_length=2, blank=True, choices=IMAGE_TYPE_CHOICES)
 
     def save(self,*args,**kwargs):
-            """
-            Function to format img before save it using our format function 
-            """
-            if self.image:
-                image , image_io , filename = restaurant_formatter_image(self.image)
-                image.save(image_io, format='webp', quality=90)
-                self.image.save(filename, ContentFile(image_io.getvalue()), save=False)
-            
-            super(MediaRestaurant, self).save(*args, **kwargs)
+        if self.image:
+            image , image_io , filename = restaurant_formatter_image(self.image)
+            image.save(image_io, format='webp', quality=90)
+            self.image.save(filename, ContentFile(image_io.getvalue()), save=False)
+        
+        super(MediaRestaurant, self).save(*args, **kwargs)
 
     def __str__(self):
         return _('Image of %(type_image)s from %(restaurant)s') % { 'type_image' : self.get_type_image_display(),'restaurant' : self.restaurant}
     
     class Meta:
         verbose_name = _('Restaurant multimedia')
-        verbose_name = _('Restaurants multimedia')
+        verbose_name_plural = _('Restaurants multimedia')

@@ -11,7 +11,6 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import CreateAPIView,  RetrieveUpdateDestroyAPIView
 from rest_framework.response import Response
 
-
 # Local imports
 from .serializers import ViewCustomerProfileSerializer, CreateCustomerProfileSerializer
 from applications.base.profileUser.models import CustomerProfile
@@ -22,35 +21,22 @@ class CreateCustomerProfileView(CreateAPIView):
     permission_classes = [IsAuthenticated, IsCustomerOrAdminUser]
     queryset = CustomerProfile.objects.all()
 
-
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
 
     def create(self, request, *args, **kwargs):
-        """Overwritted method to include a success message, we call super method and later update\ de data dictionary
-            with the message        
-        Returns:
-            Response: response with the models data and a success message 
-        """
         response = super().create(request, *args, **kwargs)
         response.data.update(message=_('Profile successfully created'))
         return response
 
     def get_serializer(self, *args, **kwargs):
-        """We need to parse self.request.data in case it is a dict or a querydict
-
-        Returns:
-            ModelSerializer: serializer for Customer Profile
-        """
         if isinstance(self.request.data, QueryDict):
             data_dict = self.request.data.dict()
-                    
             return CreateCustomerProfileSerializer(data=data_dict)
         
         else:   
             return CreateCustomerProfileSerializer(data=self.request.data)
     
-
 class RetrieveUpdateDestroyCustomerProfileView(RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated, IsCustomerOrAdminUser, IsObjAuthorOrStaff]
     queryset = CustomerProfile.objects.all()
@@ -71,17 +57,11 @@ class RetrieveUpdateDestroyCustomerProfileView(RetrieveUpdateDestroyAPIView):
         return Response(data=data, status=status.HTTP_200_OK)
 
     def get_serializer(self, *args, **kwargs):
-        """We need to parse self.request.data in case it is a dict or a querydict
-
-        Returns:
-            ModelSerializer: serializer for Customer Profile
-        """
         instance = self.get_object()
         
         if self.request.method == 'PUT':
             if isinstance(self.request.data, QueryDict):
                 data_dict = self.request.data.dict()
-                
                 return ViewCustomerProfileSerializer(instance=instance, data=data_dict)
             
             else:   
@@ -89,6 +69,3 @@ class RetrieveUpdateDestroyCustomerProfileView(RetrieveUpdateDestroyAPIView):
             
         return ViewCustomerProfileSerializer(instance=instance)
     
-
-              
-

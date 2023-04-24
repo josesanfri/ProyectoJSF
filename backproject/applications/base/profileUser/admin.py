@@ -1,12 +1,10 @@
 # Django imports
 from django.contrib import admin
 from django.forms import ModelForm, Textarea, CharField
-# from django.forms.widgets import Textarea
 from django.utils.translation import gettext_lazy as _
 
 # Local imports
 from .models import CustomerProfile, StaffProfile, Address
-
 
 # Register your models here.  
 class AbstractProfileAdmin(admin.ModelAdmin):
@@ -31,7 +29,6 @@ class AbstractProfileAdmin(admin.ModelAdmin):
     class Meta:
         abstract = True
 
-
 # Customer profile
 class CustomerProfileForm(ModelForm):
     description = CharField(widget=Textarea, required=False)
@@ -42,17 +39,14 @@ class CustomerProfileForm(ModelForm):
 
 @admin.register(CustomerProfile)
 class CustomerProfileAdmin(AbstractProfileAdmin):
-
     form = CustomerProfileForm
 
     def get_fieldsets(self, request, obj=None):
         fieldsets = list(super(CustomerProfileAdmin, self).get_fieldsets(request, obj))
-        # update the `fieldsets` with your specific fields
         return fieldsets
 
     def get_readonly_fields(self, request, obj=None):
         readonly_fields = list(super(CustomerProfileAdmin, self).get_readonly_fields(request, obj))
-        # update the `fieldsets` with your specific fields
         return readonly_fields
 
     class Meta:

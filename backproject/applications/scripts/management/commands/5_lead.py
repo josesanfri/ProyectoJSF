@@ -27,7 +27,6 @@ class Command(BaseCommand):
         
     
         # job request
-       
         counter = 10
       
         cities = ["Valencia","Granada","Sevilla"]
@@ -49,7 +48,6 @@ class Command(BaseCommand):
             job.save()
                     
             self.stdout.write(self.style.SUCCESS('Successfuly registered user: %s' % job))
-      
       
         print("--- %s  ---" % (time.process_time() - start_time))
         

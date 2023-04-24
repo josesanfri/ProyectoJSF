@@ -5,13 +5,12 @@ from requests import request
 # Third party imports
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
+from rest_framework.permissions import AllowAny, IsAdminUser
 from rest_framework.generics import CreateAPIView, ListAPIView ,RetrieveUpdateDestroyAPIView
 
 # Local imports
 from .serializers import JobApplicationSerializer , ContactFormSerializer
 from .models import JobApplication , ContactForm
-
 
 # Create your views here
 ## VIEWS FOR JOB APPLICATIONS
@@ -50,7 +49,7 @@ class RetrieveUpdateDeleteJobApplicationView(RetrieveUpdateDestroyAPIView):
         return Response (data=data , status = status.HTTP_200_OK)
 
 
-# VIEWS FOR CONTACT FORMS
+## VIEWS FOR CONTACT FORMS
 class ContactFormCreateView(CreateAPIView):
     permission_classes = [AllowAny]
     serializer_class = ContactFormSerializer
@@ -79,3 +78,4 @@ class RetrieveUpdateDestroyContactFormView(RetrieveUpdateDestroyAPIView) :
         data = {}
         data.update(message=_('Contact form successfully deleted'))
         return Response (data=data , status = status.HTTP_200_OK)
+    
