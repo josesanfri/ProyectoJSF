@@ -1,18 +1,23 @@
 {
+  "name": "frontproject",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
+    "dev": "nuxt",
     "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "core-js": "^3.25.3",
+    "nuxt": "^2.15.8",
+    "vue": "^2.7.10",
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.6.5",
-    "nuxt": "^3.3.1",
-    "pug": "^3.0.2",
-    "pug-plain-loader": "^1.1.0",
-    "sass": "^1.62.0",
-    "sass-loader": "10"
+    "@nuxtjs/tailwindcss": "^5.3.3",
+    "postcss": "^8.4.17"
   }
 }
