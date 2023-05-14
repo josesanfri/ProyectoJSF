@@ -1,43 +1,85 @@
 <template>
-    <article class="main">
-        <section class="main-about">
-            <hgroup class="main-about-title">
-                <h1>Mi pagina</h1>
-            </hgroup>
-            <NuxtLink to="/about">
-                About page
-            </NuxtLink>
-        </section>
-  </article>
+	<article>
+        <custom-cover-search
+            :title="textIndex.search.title"
+            :select="textIndex.search.select"
+            :button="textIndex.search.button"
+            :bottom="textIndex.search.bottom"
+        />
+        <custom-list-cities
+            :title="textIndex.cities.title"
+            :items="textIndex.cities.items"
+            :attrs="textIndex.cities.attrs"
+        />
+    </article>
 </template>
 
-<script lang="ts">
+<script>
+import textIndex from '~/content/pages/index/text.json'
+
 export default {
-    layout: 'base'
+    layout: 'web/index',
+    scrollToTop: true,
+    asyncData() {
+        return {
+            textIndex: textIndex
+        }
+    },
+    head() {
+        return {
+            titleTemplate: '%s Inicio',
+            meta: [
+                { name: 'robots', content: 'index,follow' },
+            ]
+        }
+    },
+    data() {
+        if(!this.$store.state.devices.bot) {
+            return {
+                loadImage: true
+            }
+        }
+        return {
+            loadImage: false
+        }
+    },
+    async mounted() {
+        try {
+            console.log(this.$store.state.auth.user.token)
+        } catch (error) {
+            console.log(error);
+        }
+    },
 }
 </script>
 
 <style lang="sass" scoped>
-    .main
-        min-height: calc(100vh - 74px)
-        display: grid
-        grid-template-columns: 1fr
-        @media screen and (min-width: 1024px)
-            grid-template-columns: repeat(2, 1fr)
+@import ~/assets/sass/components/basics/image/url
+@import ~/assets/sass/utils/breakpoints
+@import ~/assets/sass/theme/light/color
 
-        &-about
-            padding: 5rem
-            background: #00000099
-            display: grid
-            grid-template-rows: auto
-            max-height: 900px
-            color: #fff
-            &-title
-                h1
-                    text-align: center
-                    font-size: 3rem
-                    font-weight: bold
-                    text-decoration: underline 
-                    @media screen and (min-width: 1024px)
-                        padding-bottom: 2rem
+.list-horizontal
+    display: grid !important
+    grid-template-columns: repeat(2, 1fr) !important
+    grid-template-rows: repeat(2, 1fr) !important
+
+    & > li
+        text-align: center
+
+    @media ( min-width: $tablet-max)
+        grid-template-columns: repeat(4, 1fr) !important
+        grid-template-rows: 1fr !important
+
+        & > li
+            text-align: left
+
+.home
+    &-section
+        @include bg-gray-soft
+        @apply grid items-center m-auto
+        grid-template-columns: 1fr
+        gap: 1rem
+
+        @media ( min-width: $large-screen)
+            grid-template-columns: repeat(4, 1fr)
 </style>

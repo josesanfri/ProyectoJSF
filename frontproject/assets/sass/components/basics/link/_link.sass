@@ -1,0 +1,34 @@
+@import ~/assets/sass/theme/light/color
+@import ~/assets/sass/base/typography/fontWeight
+
+@mixin link-basic
+    @include font-normal
+    @apply inline-block cursor-pointer no-underline hover:no-underline
+    margin: auto 0
+
+@mixin link-btn
+    @include color-white
+    @include font-bold
+    @apply cursor-pointer no-underline hover:no-underline
+
+@mixin link-other
+    @include color-dark
+    @include font-normal
+    @apply cursor-pointer no-underline hover:no-underline
+    &:hover
+        @include color-secondary
+
+@mixin link-footer
+    @include color-gray-light
+    @include font-normal
+    @apply transition duration-700 cursor-pointer no-underline hover:no-underline
+    &:hover
+        @include color-primary
+        @apply ml-1
+
+@mixin link-header
+    @include color-dark
+    @include font-normal
+    @apply cursor-pointer no-underline hover:no-underline
+    &:hover
+        @include color-primary

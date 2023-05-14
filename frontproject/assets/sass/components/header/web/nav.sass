@@ -1,0 +1,131 @@
+@import ~/assets/sass/theme/light/color
+@import ~/assets/sass/utils/breakpoints
+@import ~/assets/sass/base/typography/fontSize
+    
+// Nav
+.navTransition
+    transition: transform .375s ease
+    transform: translateX(0%) !important
+
+.navigation
+    position: fixed
+    top: 0.01px
+    left: 0
+    display: grid
+    grid-template-rows: auto 1fr
+    width: 100vw
+    height: 60px
+    z-index: 9
+
+    @media ( min-width: $tablet-max)
+        @include bg-white-variant
+        grid-template-rows: 1fr
+        grid-template-columns: auto 1fr
+        height: 60px
+        padding: 0 1rem
+
+    // Open Close Icon
+    &-open-close
+        @include color-gray-dark
+        height: fit-content
+        margin: auto 0
+        font-size: 1.3rem
+        grid-column: 1 / -1
+        grid-row: 1
+        z-index: 1
+        width: fit-content
+        margin-left: 1rem
+        cursor: pointer
+
+        @media ( min-width: $tablet-max)
+            display: none
+
+    // Picture
+    &-logo-box
+        @include bg-white-variant
+        display: grid
+        padding: .2rem
+        z-index: 2
+        height: 60px
+
+        @media ( min-width: $tablet-max)
+            grid-column: 1 / 2
+            box-shadow: none
+
+            span
+                grid-column: 1 / -1
+                grid-row: 1
+                z-index: 1
+
+    // Logo
+    &-logo-item
+        grid-column: 1 / -1
+        grid-row: 1
+        z-index: 0
+        margin: auto !important
+
+// Nav Links
+.list
+    @include bg-white-variant
+    width: 80%
+    max-width: 300px
+    min-width: fit-content
+    min-height: calc(100vh - 50px)
+    transform: translateX(-100%)
+    z-index: 1
+    padding: 0 1rem
+    overflow-y: scroll
+
+    @media ( min-width: $tablet-max)
+        display: flex
+        grid-column: 2 / 3
+        height: fit-content
+        transform: translateX(0%)
+        max-width: 100%
+        width: 100%
+        min-height: 60px
+        max-height: 60px
+        justify-content: flex-end
+        gap: 1rem
+        overflow-y: hidden
+
+    &-owner
+        margin: 2rem 0
+        display: flex
+        justify-content: center
+
+        @media ( min-width: $tablet-max)
+            margin: auto 0
+
+    &-item
+        margin-bottom: 1.5rem
+        display: grid
+
+        @media ( min-width: $tablet-max)
+            border: 0
+            margin-bottom: 0
+            display: flex
+            font-size: $sizeFontHeader
+
+    &-likes
+        @include color-primary-variant
+        font-weight: bold
+        display: grid
+
+        @media ( min-width: $tablet-max)
+            margin: auto 0
+
+    // Br with text
+    &-separator
+        margin: 2rem 0
+
+        @media ( min-width: $tablet-max)
+            display: none
+
+    // Link Button Sign In Up
+    &-user
+        display: flex
+        justify-content: center
+
+        @media ( min-width: $tablet-max)
+            margin: auto 0

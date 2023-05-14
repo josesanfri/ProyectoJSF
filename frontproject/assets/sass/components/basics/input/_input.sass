@@ -1,0 +1,38 @@
+@import ~/assets/sass/theme/light/color
+@import ~/assets/sass/base/typography/fontWeight
+
+@mixin input-text
+    @include bg-white
+    @include color-gray-dark
+    @include font-normal
+    @apply shadow appearance-none border rounded py-2 px-3 leading-tight focus:outline-none focus:bg-gray-200
+
+@mixin input-date
+    @include color-gray-dark
+    @include font-normal
+    @apply shadow appearance-none border rounded py-2 px-3 leading-tight focus:outline-none focus:bg-gray-200
+
+@mixin input-mail
+    @include color-gray-dark
+    @include font-normal
+    @apply shadow appearance-none border rounded py-2 px-3 leading-tight focus:outline-none focus:bg-gray-200
+
+@mixin input-check
+    @apply p-2 h-5 w-5 shadow focus:outline-none
+    min-height: 1.25rem
+    min-width: 1.25rem
+    max-height: 1.25rem
+    max-width: 1.25rem
+
+@mixin input-radio
+    @apply p-2 h-5 w-5 focus:outline-none
+
+@mixin input-file
+    @include color-gray-dark
+    @include font-normal
+    @apply shadow appearance-none border rounded py-2 px-3 leading-tight focus:outline-none focus:outline-none
+
+@mixin input-img
+    @include color-gray-dark
+    @include font-normal
+    @apply shadow appearance-none border rounded py-2 px-3 leading-tight focus:outline-none focus:outline-none

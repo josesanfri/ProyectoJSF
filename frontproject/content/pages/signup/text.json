@@ -1,0 +1,28 @@
+{
+    "title": "Crear cuenta!",
+    "inputs": {
+        "1": "email",
+        "2": "telefono (*opcional)",
+        "3": "password",
+        "4": "Te conocí por?",
+        "typeUser": {
+            "owner": "Soy propietario!",
+            "renter": "Soy inquilino!"
+        }
+    },
+    "usePrivacy": {
+        "check1": {
+            "1": "He leído y acepto los",
+            "2": "Terminos y condiciones de uso"
+        },
+        "check2": {
+            "1": "Acepto la",
+            "2": "Política de Privacidad"
+        }
+    },
+    "btnSignup": "Registrarme",
+    "link":{
+        "1": "¿Aún no tienes cuenta?",
+        "2": "¡Registrate!"
+    }
+}

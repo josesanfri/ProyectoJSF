@@ -1,0 +1,11 @@
+@import ~/assets/sass/utils/breakpoints
+
+@mixin imageUrl-wallpaper-home-room
+    background-image: url('/img/background/search-bg.webp')
+    
+    @media ( min-width: $phone-max)
+        background-image: url('/img/background/search-bg.webp')
+
+    @media ( min-width: $tablet-max)
+        background-image: url('/img/background/search-bg.webp')
+        @apply bg-no-repeat bg-cover overflow-x-hidden

@@ -1,0 +1,158 @@
+{     
+    "about": {
+        "title": {
+            "text": "Sobre nosotros",
+            "attrs": {
+                "isWhite": true,
+                "isBold": true
+            }
+        },
+        "items": [
+            {
+                "text": "Nuestra historia",
+                "label": "link-about-us",
+                "href": "/about/",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": false
+                }
+            },
+            {
+                "text": "Trabaja con nosotros",
+                "label": "link-about-work",
+                "href": "/about/work/",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": false
+                }
+            },
+            {
+                "text": "Haz practicas con nosotros",
+                "label": "link-about-trainee",
+                "href": "/about/trainee/",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": false
+                }
+            }
+        ]
+    },
+    "terms": {
+        "title": {
+            "text": "Términos y condiciones",
+            "attrs": {
+                "isWhite": true,
+                "isBold": true
+                
+            }
+        },
+        "items": [
+            {
+                "text": "Política de privacidad",
+                "label": "link-about-privacity",
+                "href": "/about/privacity/",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": false
+                }
+            },
+            {
+                "text": "Política de cookies",
+                "label": "link-about-cookies",
+                "href": "/about/cookies/",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": false
+                }
+            },
+            {
+                "text": "Política sobre la solicitud de empleo",
+                "label": "link-about-terms",
+                "href": "/about/job-application/",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": false
+                }
+            },
+            {
+                "text": "Política sobre las redes sociales",
+                "label": "link-about-terms-prereserve",
+                "href": "/about/social-media/",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": false
+                }
+            },
+            {
+                "text": "Aviso legal",
+                "label": "link-about-legal",
+                "href": "/about/legal/",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": false
+                }
+            }
+        ]
+    },
+    "support": {
+        "title": {
+            "text": "Soporte",
+            "attrs": {
+                "isWhite": true,
+                "isBold": true
+                
+            },
+            "subtitle": {
+                "text" : "De Lunes a Viernes de 9:00 a 14:00 y de 16:00 a 19:00",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": true
+                }
+            }
+        },
+        "items": [
+            {
+                "id": 1,
+                "attrs": {
+                    "isWhite": true,
+                    "isCenter": true
+                },
+                "location": "Valencia, Paseo Facultades, 6",
+                "locationLabel": "contact-office-valencia",
+                "locationLink": "",
+                "phone": "+ 34 611 221 121",
+                "phoneLabel": "contact-phone-valencia",
+                "phoneLink": "tel://34691914166",
+                "email": "valencia@leg.es",
+                "emailLabel": "contact-email-valencia",
+                "emailLink": "mailto:equipo@leg.es",
+                "whatsapp": "Envianos un Whatsapp",
+                "whatsappLabel": "contact-whatsapp-valencia",
+                "whatsappLink": ""
+            }
+        ]
+    },
+    "copyright": {
+        "text": "La Esquina Gourmet 2023",
+        "attrs": {
+            "isWhite": true,
+            "isBold": false,
+            "isCenter": true
+        },
+        "icon": {
+            "image": {
+                "src": "/icon/base/white/copyright.webp",
+                "alt": "copyright icon",
+                "width": 20,
+                "height": 20,
+                "attrs": {
+                    "needContrast": true
+                }
+            }, 
+            "sources": [{
+                "srcset": "/icon/base/white/copyright.webp",
+                "media":"(min-width: 320px)"
+            }]
+        }
+    }
+}

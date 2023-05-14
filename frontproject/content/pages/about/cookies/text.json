@@ -1,0 +1,95 @@
+{
+    "politics": {
+        "title": {
+            "text": "Política de cookies",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        },
+        "items": [
+            {
+                "text": "Una cookie es un archivo de información que el servidor de este sitio web envía al dispositivo (ordenador, smartphone, tablet, etc.) de quien accede a la página para almacenar y recuperar información sobre la navegación que se efectúa desde dicho equipo.",
+                "attrs": {}
+            },
+            {
+                "text": "La Esquina Gourmet S.L. utiliza diversos tipos de cookies (técnicas, analíticas y sociales) únicamente con la finalidad de mejorar la navegación del usuario en el sitio web, sin ningún tipo de objeto publicitario o similar.",
+                "attrs": {}
+            },
+            {
+                "text": "La Esquina Gourmet S.L., a través de las cookies no recoge dato personal alguno. Todas las cookies, salvo las utilizadas por el sistema de estadísticas Google Analytics son temporales y desaparecen al concluir la sesión.",
+                "attrs": {}
+            },
+            {
+                "text": "La Esquina Gourmet S.L. utiliza en este sitio web las cookies que se detallan a continuación:",
+                "attrs": {}
+            }
+        ]
+    },
+    "cookiesesp": {
+        "title": {
+            "text": "Tipos de cookies",
+            "attrs": {
+                "isBold": true
+            }
+        },
+        "items": [
+            {
+                "text": "-Tipo: csrftoken.",
+                "attrs": {}
+            },
+            {
+                "text":  "-Caducidad: Tiempo de sesión.",
+                "attrs": {}
+            },
+            {
+                "text": "-Finalidad: Enviar datos con seguridad.",
+                "attrs": {}
+            },
+            {
+                "text": "-Terceros: Propia.",
+                "attrs": {}
+            },
+            {
+                "text": "_______________",
+                "attrs": {}
+            },
+            {
+                "text": "-Tipo: sessionid.",
+                "attrs": {}
+            },
+            {
+                "text":  "-Caducidad: Tiempo de sesión.",
+                "attrs": {}
+            },
+            {
+                "text":  "-Finalidad: Permite identificar las sesiones de los usuarios para guardar datos en el servidor de forma más segura.",
+                "attrs": {}
+            },
+            {
+                "text": "-Terceros: Propia.",
+                "attrs": {}
+            }
+        ]
+    },
+    "user": {
+        "items": [
+            {
+                "text": "El usuario podrá, en cualquier momento, elegir qué cookies quiere que funcionen en este sitio web mediante:",
+                "attrs": {}
+            },
+            {
+                "text": "a) La configuración del navegador.",
+                "attrs": {}
+            },
+            {
+                "text": "b) Herramientas de terceros, disponibles online, que permiten a los usuarios detectar las cookies en cada sitio web que visita y gestionar su desactivación. Ni esta web, ni sus representantes legales se hacen responsables ni del contenido ni de la veracidad de las políticas de privacidad que puedan tener los terceros mencionados en esta política de cookies.",
+                "attrs": {}
+            },
+            {
+                "text": "La aceptación de la presente política implica que el usuario ha sido informado de una forma clara y completa sobre el uso de dispositivos de almacenamiento y recuperación de datos (cookies) así como que La Esquina Gourmet S.L. dispone del consentimiento del usuario para el uso de las mismas tal y como establece el artículo 22 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE).",
+                "attrs": {}
+            }
+        ]
+    } 
+}

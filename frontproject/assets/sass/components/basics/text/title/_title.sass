@@ -1,0 +1,29 @@
+@import ~/assets/sass/base/typography/fontWeight
+
+@mixin title
+    @include font-bold
+    @apply py-1 px-4
+
+@mixin title-h1
+    @include title
+    @apply text-2xl md:text-4xl lg:text-5xl
+
+@mixin title-h2
+    @include title
+    @apply text-xl md:text-2xl lg:text-3xl
+
+@mixin title-h3
+    @include title
+
+@mixin title-h4
+    @include title
+
+@mixin title-h5
+    @include title
+
+@mixin title-h6
+    @include title
+
+@mixin subtitle-section
+    @include title
+    @apply text-xl lg:text-2xl

@@ -1,0 +1,24 @@
+{
+    "home": {
+        "text": "Inicio",
+        "label": "link-home"
+    },
+    "contact": {
+        "text": "Contacto",
+        "label": "link-contact"
+    },
+    "search": {
+        "text": "Restaurantes",
+        "label": "link-search"
+    },
+    "panel": {
+        "text": "Perfil",
+        "label": "link-panel"
+    },
+    "login": {
+        "text": "Iniciar sesión"
+    },
+    "logout": {
+        "text": "Cerrar sesión"
+    }
+}

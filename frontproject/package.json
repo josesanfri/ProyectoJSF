@@ -1,18 +1,27 @@
 {
+  "name": "frontproject",
   "private": true,
   "scripts": {
+    "dev": "nuxt",
     "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "start": "nuxt start",
+    "doit": "nuxt build && nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "core-js": "3.25.3",
+    "body-parser": "1.19.1",
+    "nuxt": "2.15.8",
+    "cookie": "0.4.1",
+    "js-cookie": "3.0.1"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.6.5",
-    "nuxt": "^3.3.1",
+    "@nuxtjs/tailwindcss": "4.2.1",
+    "postcss": "8.4.17",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
-    "sass": "^1.62.0",
+    "sass": "^1.62.1",
     "sass-loader": "10"
   }
 }

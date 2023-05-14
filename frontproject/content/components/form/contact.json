@@ -1,0 +1,90 @@
+{
+    "inputs": [
+        {
+            "id": "user_name",
+            "text": "Nombre *",
+            "placeholder": "Nombre",
+            "name": "name",
+            "type": "text",
+            "form": "contactForm",
+            "attrs": {
+                "flexColumn": true
+            }
+        },
+        {
+            "id": "user_surname",
+            "text": "Apellidos *",
+            "placeholder": "Apellidos",
+            "name": "surname",
+            "type": "text",
+            "form": "contactForm",
+            "attrs": {
+                "flexColumn": true
+            }
+        },
+        {
+            "id": "email",
+            "text": "Email *",
+            "placeholder": "ejemplo@gmail.com",
+            "name": "email",
+            "type": "email",
+            "form": "contactForm",
+            "attrs": {
+                "flexColumn": true
+            }
+        },
+        {
+            "id": "user_prefix_phone",
+            "text": "Prefijo *",
+            "placeholder": "+34",
+            "name": "prefix_phone",
+            "type": "text",
+            "form": "contactForm",
+            "attrs": {
+                "flexColumn": true
+            }
+        },
+        {
+            "id": "user_phone",
+            "text": "Teléfono *",
+            "placeholder": "666554433",
+            "name": "phone",
+            "type": "text",
+            "form": "contactForm",
+            "attrs": {
+                "flexColumn": true,
+                "isLong": true
+            }
+        },
+        {
+            "text": "Mensaje *",
+            "id": "user_information",
+            "placeholder": "Dejanos un mensaje aquí",
+            "name": "information",
+            "type": "textarea",
+            "form": "contactForm",
+            "attrs": {
+                "flexColumn": true,
+                "isLong": true
+            }
+        }
+    ],
+    "usePrivacy": {
+        "check1": {
+            "1": "He leído y acepto los",
+            "2": "Terminos y condiciones de uso"
+        },
+        "check2": {
+            "1": "Acepto la",
+            "2": "Política de Privacidad"
+        }
+    },
+    "submit": {
+        "type": "submit",
+        "text": "Enviar",
+        "attrs": {
+            "isPink": true,
+            "isLong": true
+        }
+    }
+}

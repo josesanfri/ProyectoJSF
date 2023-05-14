@@ -1,0 +1,102 @@
+{
+    "request": {
+        "title": {
+            "text": "Enviar solicitud",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        }
+    },
+    "info": {
+        "title": {
+            "text": "Información básica de protección de datos:",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        },
+        "paragraph": {
+            "text": "En cumplimiento del deber de informar a los interesados de las circunstancias y condiciones del tratamiento de sus datos y de los derechos que le asisten, ponemos a su disposición la siguiente información.",
+            "attrs": {}
+        }
+    },
+    "responsable": {
+        "title": {
+            "text": "Responsable de tratamiento:",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        },
+        "paragraph": {
+            "text": "La Esquina Gourmet S.L.",
+            "attrs": {}
+        }
+    },
+    "purpose": {
+        "title": {
+            "text": "Finalidad del tratamiento de sus datos:",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        },
+        "paragraph": {
+            "text": "Incluir su candidatura en futuros procesos de selección de la empresa.",
+            "attrs": {}
+        }
+    },
+    "data": {
+        "title": {
+            "text": "Conservación de los datos:",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        },
+        "paragraph": {
+            "text": "Los datos se conservarán durante un plazo de 6 meses desde la recepción del curriculum. Agotado este plazo la empresa destruirá el curriculum al menos que el candidato haya mandado una actualización del mismo.",
+            "attrs": {}
+        }
+    },
+    "legitimation": {
+        "title": {
+            "text": "Legitimación para el tratamiento:",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        },
+        "paragraph": {
+            "text": "Consentimiento explícito otorgado con la aceptación de las condiciones de uso de nuestro formulario.",
+            "attrs": {}
+        }
+    },
+    "addressee": {
+        "title": {
+            "text": "Destinatario de sus datos personales:",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        },
+        "paragraph": {
+            "text":  "No se prevén cesiones de datos salvo en aquellos casos en que exista una obligación legal. No hay previsión de transferencias de datos internacionales. En caso de que la empresa envíe su curriculum a un tercero se solicitará formalmente su conformidad.",
+            "attrs": {}
+        }
+    },
+    "rights": {
+        "title": {
+            "text": "Sus derechos:",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        },
+        "paragraph": {
+            "text": "Puede revocar el consentimiento y ejercer sus Derechos a acceder, rectificar, oponerse, limitar, portar y suprimir los datos, escribiendo a La Esquina Gourmet S.L., en Paseo Facultades 6, Bajo, 46021, Valencia además de acudir a la autoridad de control competente (AEPD).",
+            "attrs": {}
+        }
+    }
+}

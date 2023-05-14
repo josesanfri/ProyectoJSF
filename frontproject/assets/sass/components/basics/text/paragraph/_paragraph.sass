@@ -1,0 +1,15 @@
+@import ~/assets/sass/base/typography/fontWeight
+
+@mixin p-basic
+    @include font-normal
+    @apply text-base inline-block
+
+@mixin p-word
+    @include font-normal
+    @apply text-base break-words lg:text-lg
+
+@mixin p-space
+    @include font-normal
+    @apply text-base lg:text-lg
+    white-space: break-spaces
+    
