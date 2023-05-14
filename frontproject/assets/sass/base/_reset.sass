@@ -1,0 +1,51 @@
+// LOCAL IMPORTS
+@import ~/assets/sass/base/typography/family
+
+// RESETS STYLES    
+html, body
+    @apply cursor-default overflow-x-hidden w-screen
+    scroll-behavior: smooth
+    font-family: $font-secondary !important
+
+*
+    scrollbar-width: auto
+    scrollbar-color: white
+
+*::-webkit-scrollbar
+    width: 14px
+    background: #00000000
+
+*::-webkit-scrollbar-thumb
+    background-color: black
+    border-radius: 20px
+    border: 2px solid white
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+    font-family: $font-primary !important
+
+a
+    @apply no-underline
+
+    &:hover
+        @apply no-underline
+
+li
+    @apply list-none
+
+ul
+    margin-block-start: 0em
+    margin-block-end: 0em
+    margin-inline-start: 0px
+    margin-inline-end: 0px
+    padding-inline-start: 0px
+
+img
+    content-visibility: auto
+
+video
+    @apply max-w-full w-full h-full

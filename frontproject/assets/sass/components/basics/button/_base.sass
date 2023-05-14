@@ -1,0 +1,60 @@
+@import ~/assets/sass/theme/light/color
+@import ~/assets/sass/base/typography/fontWeight
+@import ~/assets/sass/base/typography/fontSize
+@import ~/assets/sass/utils/breakpoints
+@import ~/assets/sass/utils/size
+
+// BUTTON BASE
+
+@mixin btn
+    @include font-medium
+    @apply shadow border-0 rounded cursor-pointer px-4 whitespace-nowrap text-center
+    padding-bottom: calc(0.5rem - 1px)
+    padding-top: calc(0.5rem - 1px) 
+
+@mixin btn-width
+    min-width: $widthButton-sm
+
+    @media ( min-width: $phone-max)
+        min-width: $widthButton-md
+
+    @media ( min-width: $tablet-max)
+        @include font-small
+
+// TYPE BUTTONS    
+
+@mixin btn-danger
+    @include btn
+    @include bg-danger
+    @include color-white
+
+@mixin btn-danger-auto
+    @include btn-danger
+    @include btn-width
+
+@mixin btn-warning
+    @include btn
+    @include bg-warning
+    @include color-white
+
+@mixin btn-warning-auto
+    @include btn-warning
+    @include btn-width
+
+@mixin btn-success
+    @include btn
+    @include bg-success
+    @include color-white
+
+@mixin btn-success-auto
+    @include btn-success
+    @include btn-width
+
+@mixin btn-white
+    @include btn
+    @include bg-white
+    @include color-primary
+
+@mixin btn-white-auto
+    @include btn-white
+    @include btn-width

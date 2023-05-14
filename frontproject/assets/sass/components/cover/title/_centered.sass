@@ -1,0 +1,18 @@
+@import ~/assets/sass/components/basics/text/title/title
+@import ~/assets/sass/components/cover/base
+@import ~/assets/sass/utils/breakpoints
+@import ~/assets/sass/theme/light/color
+
+@mixin cover-titlebox-article
+    @apply flex flex-col m-auto justify-center content-center h-full backdrop-filter backdrop-brightness-50
+    min-height: 250px
+
+    @media ( min-width: $large-screen)
+        min-height: 450px
+
+@mixin cover-titlebox-hgroup
+    @apply m-auto text-center
+
+@mixin cover-titlebox-title
+    @include title-h1
+    @include color-white

@@ -1,0 +1,144 @@
+{
+    "inputs": [
+        {
+            "text": "Nombre completo *",
+            "id": "user_name",
+            "placeholder": "Nombre completo",
+            "name": "name",
+            "type": "text",
+            "form": "workForm",
+            "attrs": {
+                "flexColumn": true
+            }
+        },
+        {
+            "text": "Email *",
+            "id": "user_email",
+            "placeholder": "ejemplo@gmail.com",
+            "name": "email",
+            "type": "text",
+            "form": "workForm",
+            "attrs": {
+                "flexColumn": true
+            }
+        },
+        {
+            "text": "Prefijo *",
+            "id": "user_prefix_phone",
+            "placeholder": "+34",
+            "name": "prefix_phone",
+            "type": "text",
+            "form": "workForm",
+            "attrs": {
+                "flexColumn": true
+            }
+        },
+        {
+            "text": "Teléfono *",
+            "id": "user_phone",
+            "placeholder": "000000000",
+            "name": "phone",
+            "type": "text",
+            "form": "workForm",
+            "attrs": {
+                "flexColumn": true
+            }
+        },
+        {
+            "text": "NIF *",
+            "id": "user_NIF",
+            "placeholder": "00000000A",
+            "name": "NIF",
+            "type": "text",
+            "form": "workForm",
+            "attrs": {
+                "flexColumn": true
+            }
+        },
+        {
+            "text": "Edad *",
+            "id": "user_age",
+            "placeholder": "00",
+            "name": "age",
+            "type": "text",
+            "form": "workForm",
+            "attrs": {
+                "flexColumn": true
+            }
+        },
+        {
+            "text": "Nacionalidad *",
+            "id": "user_origin",
+            "placeholder": "España",
+            "name": "origin",
+            "type": "text",
+            "form": "workForm",
+            "attrs": {
+                "flexColumn": true
+            }
+        },
+        {
+            "text": "Estudios *",
+            "id": "user_studies",
+            "placeholder": "FP Superior Marketing",
+            "name": "studies",
+            "type": "text",
+            "form": "workForm",
+            "attrs": {
+                "flexColumn": true
+            }
+        },
+        {
+            "text": "Ciudad *",
+            "id": "user_city",
+            "placeholder": "Valencia",
+            "name": "city",
+            "type": "text",
+            "form": "workForm",
+            "attrs": {
+                "flexColumn": true
+            }
+        },
+        {
+            "text": "Curriculum (solo pdf) *",
+            "id": "user_curriculum",
+            "placeholder": "Curriculum",
+            "name": "curriculum",
+            "type": "file",
+            "form": "workForm",
+            "attrs": {
+                "flexColumn": true
+            }
+        },
+        {
+            "text": "Mensaje *",
+            "id": "user_information",
+            "placeholder": "Dejanos un mensaje aquí",
+            "name": "information",
+            "type": "textarea",
+            "form": "workForm",
+            "attrs": {
+                "flexColumn": true,
+                "isLong": true
+            }
+        }
+    ],
+    "usePrivacy": {
+        "check1": {
+            "1": "He leído y acepto los",
+            "2": "Terminos y condiciones de uso"
+        },
+        "check2": {
+            "1": "Acepto la",
+            "2": "Política de Privacidad"
+        }
+    },
+    "submit": {
+        "type": "submit",
+        "text": "Enviar",
+        "attrs": {
+            "isPink": true,
+            "isLong": true
+        }
+    }
+}

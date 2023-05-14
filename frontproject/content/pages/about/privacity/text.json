@@ -1,0 +1,152 @@
+{
+    "politics": {
+        "title": {
+            "text": "Política de privacidad y protección de datos del sitio web",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            },
+            "paragraph": {
+                "text": "La Esquina Gourmet S.L. es una empresa en la que la transparencia en la información es fundamental para establecer una relación de confianza con las personas que forman nuestro proyecto y con nuestros proveedores y clientes, siendo la protección de los datos personales de las personas que confían en nosotros de vital importancia, por lo que queremos mediante la presente Política de privacidad y protección de datos personales, informarte de cómo recabamos y cómo tratamos o utilizamos dichos datos. En esta política de privacidad y protección de datos personales se establecen las bases sobre las que La Esquina Gourmet S.L., con domicilio en Paseo Facultades 6, Bajo, 46021, Valencia, trata los datos de carácter personal que voluntariamente nos facilitan nuestros usuarios a través de la página web. Esta Política siempre será aplicable cuando se faciliten datos a La Esquina Gourmet S.L., el cual será responsable de sus datos (Responsable del Tratamiento de los Datos), y a través de cualquiera de los formularios de contacto o suscripción donde se recojan datos de carácter personal (nombre, email, etc.).",
+                "attrs": {}
+            }
+            
+        }
+    },
+    "compromise": {
+        "title": {
+            "text": "A qué nos comprometemos",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        },
+        "items": [
+            {
+                "text": "A respetar la privacidad de nuestros usuarios y tratar los datos personales con el consentimiento de los mismos.",
+                "attrs": {}
+            },
+            {
+                "text": "A tratar los datos personales que estrictamente necesitemos para dar el servicio solicitado, y tratarlos de forma segura y confidencial, tomando las medidas necesarias para evitar el acceso no autorizado y el uso indebido de los mismos.",
+                "attrs": {}
+            },
+            {
+                "text": "A no utilizar los datos personales para finalidades para las que no hemos obtenido previamente el consentimiento.",
+                "attrs": {}
+            },
+            {
+                "text": "A no dar los datos personales a terceros ni compartirlos.",
+                "attrs": {}
+            },
+            {
+                "text": "A conservar los datos personales durante el tiempo estrictamente necesario para la finalidad concreta para la que han sido proporcionados.",
+                "attrs": {}
+            }
+        ]
+    },
+    "data": {
+        "title": {
+            "text": "Qué datos personales utilizamos",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        },
+        "items": [
+            {
+                "text": "A través de nuestra página web podemos recabar datos personales para diferentes finalidades:",
+                "attrs": {}
+            },
+            {
+                "text": "Solicitud de información por parte del usuario.",
+                "attrs": {}
+            },
+            {
+                "text": "Trabajar con nosotros mediante el envío del currículum.",
+                "attrs": {}
+            }
+        ],
+        "paragraph": {
+            "text": "Dependiendo de la finalidad para la que se aportan los datos, serán requeridos los datos estrictamente necesarios. Es importante que el usuario sea consciente de los datos que aporta y la finalidad para la que lo hace porque en el momento que los facilita, está aceptando que recopilemos, almacenemos y usemos dichos datos para la finalidad requerida, pudiendo en cualquier momento retirar el consentimiento prestado por los cauces oportunos siendo el consentimiento del interesado la base legal y legitimación para el tratamiento de sus datos personales.",
+            "attrs": {}
+        }
+    },
+    "veracity": {
+        "title": {
+            "text": "Exactitud y veracidad de los datos",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            },
+            "paragraph": {
+                "text": "El usuario, al aportar los datos requeridos en los formularios es el único responsable de la veracidad de los datos remitidos, garantizando y respondiendo de la exactitud, vigencia y autenticidad de los datos personales facilitados, comprometiéndose a mantenerlos debidamente actualizados.",
+                "attrs": {}
+            }
+        }
+    },
+    "rights": {
+        "title": {
+            "text": "Qué derechos tiene sobre los datos personales aportados",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        },
+        "items": [
+            {
+                "text": "Una vez aportados los datos personales tendrá derecho a:",
+                "attrs": {}
+            },
+            {
+                "text": "Consultar cualquier duda y a que se le informe de cómo usamos los datos y a obtener acceso a los mismos.",
+                "attrs": {}
+            },
+            {
+                "text": "Que se rectifique o borre su información o a imponer limitaciones en el tratamiento de la misma.",
+                "attrs": {}
+            },
+            {
+                "text": "Cancelación de los datos.",
+                "attrs": {}
+            },
+            {
+                "text": "Oponerse al tratamiento de sus datos.",
+                "attrs": {}
+            },
+            {
+                "text": "Portabilidad de los datos.",
+                "attrs": {}
+            }
+        ],
+        "paragraph": {
+            "text": "En cualquier momento, podrá ejercitar estos Derechos, mediante un escrito y acreditando su personalidad dirigido a La Esquina Gourmet S.L., en Paseo Facultades 6, Bajo, 46021, Valencia, o a través de la dirección de correo electrónico: administracion@leg.es. Además, podrá presentar una reclamación ante la autoridad de control, en este caso, la Agencia Española de Protección de Datos, si considera que el tratamiento de datos personales infringe la legislación aplicable.",
+            "attrs": {}
+        }
+    },
+    "security": {
+        "title": {
+            "text": "Seguridad y almacenamiento de los datos",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            },
+            "paragraph": {
+                "text": "Mantendremos los datos durante el tiempo estrictamente necesario para la prestación del servicio solicitado y mientras el titular no solicite su eliminación, adoptando las medidas adecuadas de carácter técnico y organizativo contra el tratamiento no autorizado o ilícito y contra su pérdida, destrucción o daño accidentales, haciendo todo lo posible por protegerlos y mantenerlos de forma segura.",
+                "attrs": {}
+            }
+        }
+    },
+    "personal": {
+        "title": {
+            "text": "Qué datos personales compartimos con terceros",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            },
+            "paragraph": {
+                "text": "No se prevén cesiones de datos salvo en aquellos casos en que exista una obligación legal. No hay previsión de transferencias de datos internacionales.",
+                "attrs": {}
+            }
+        }
+    }
+}

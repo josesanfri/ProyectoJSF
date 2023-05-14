@@ -1,0 +1,43 @@
+@import ~/assets/sass/components/basics/button/base
+
+@mixin solid-blue
+    @include btn
+    @include bg-primary
+    @include color-white
+
+@mixin solid-blue-auto
+    @include solid-blue
+    @include btn-width
+
+@mixin solid-blue-variant
+    @include btn
+    @include bg-primary-variant
+    @include color-white
+
+@mixin solid-blue-variant-auto
+    @include solid-blue-variant
+    @include btn-width
+
+@mixin solid-pink
+    @include btn
+    @include bg-secondary
+    @include color-white
+
+@mixin solid-pink-auto
+    @include solid-pink
+    @include btn-width
+
+@mixin solid-pink-variant
+    @include btn
+    @include bg-secondary-variant
+    @include color-white
+
+@mixin solid-pink-variant-auto
+    @include solid-pink-variant
+    @include btn-width
+
+@mixin solid-white
+    @include btn-white
+
+@mixin solid-white-auto
+    @include btn-white-auto

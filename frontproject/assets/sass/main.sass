@@ -1,0 +1,39 @@
+// IMPORT RESET BROWSER STYLES
+@import base/reset
+
+// IMPORT UTILS
+@import utils/breakpoints
+
+body, html
+    @apply w-screen
+    min-height: 100vh
+    overflow-x: clip
+    text-rendering: optimizeLegibility
+    -webkit-font-smoothing: antialiased
+
+    @media (min-width: $tablet-max)
+        width: calc( 100vw - 14px )
+
+main
+    padding-top: 60px
+
+img
+    @apply pointer-events-none
+
+// BODY OVERFLOW
+.body-overflow
+    @apply overflow-hidden w-screen h-screen
+
+@font-face
+    font-family: 'Poppins'
+    font-style: normal
+    font-weight: 500
+    font-display: swap
+    src: url('~/assets/fonts/Poppins-Light/Poppins-Light.ttf') format('truetype')
+
+@font-face
+    font-family: 'Poppins-title'
+    font-style: normal
+    font-weight: 300
+    font-display: swap
+    src: url('~/assets/fonts/Poppins-Medium/Poppins-Medium.ttf') format('truetype')

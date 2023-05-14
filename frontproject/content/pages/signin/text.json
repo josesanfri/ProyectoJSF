@@ -1,0 +1,26 @@
+{
+    "title": {
+        "1": "Inicia sesión,",
+        "2": "registrate,",
+        "3": "con Google o Facebook!"
+    },
+    "usePrivacy": {
+        "1": "Al registrarte o iniciar sesión con google o facebook, estás aceptando los",
+        "2": "Términos y Condiciones de uso",
+        "3": "y la ",
+        "4": "pólitica de privacidad"
+    },
+    "form": {
+        "title": "Iniciar sesión",
+        "inputs": {
+            "1": "email",
+            "2": "password"
+        },
+        "btnText": "Inicio de sesión"
+    },
+    "link":{
+        "1": "Iniciar sesión con",
+        "2": "email!",
+        "forgot": "He olvidado mi contraseña"
+    }
+}

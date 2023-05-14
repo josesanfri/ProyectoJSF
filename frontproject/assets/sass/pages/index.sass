@@ -1,0 +1,46 @@
+@import ~/assets/sass/components/basics/image/url
+@import ~/assets/sass/components/cover/base
+@import ~/assets/sass/components/cover/title/centered
+@import ~/assets/sass/utils/breakpoints
+
+
+
+.coverSearch
+    @include cover-titlebox
+
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-content: center
+    position: relative
+
+    &-background
+        @include imageUrl-wallpaper-home-room
+
+    &-article
+        @apply flex flex-col justify-center content-center h-full backdrop-filter backdrop-brightness-50
+        min-height: 250px
+
+        @media ( min-width: $large-screen)
+            min-height: 450px
+
+    &-title
+        @include cover-titlebox-title
+        text-align: center
+        margin-top: auto
+
+    &-form
+        display: flex
+        justify-content: center
+        padding: 2rem
+
+    &-bottom
+        @apply text-center
+        background: #000000
+        opacity: .5
+
+    &-search-forn-btn
+        @apply w-full
+
+        @media ( min-width: $large-screen)
+            width: 30%

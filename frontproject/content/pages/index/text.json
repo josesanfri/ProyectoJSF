@@ -1,0 +1,117 @@
+{
+    "search": {
+        "title": {
+            "text": "Disfruta de una experiencia única en La Esquina Gourmet",
+            "attrs": {
+                "isWhite": true,
+                "isBold": true
+            }
+        },
+        "select": {
+            "list_id": "selectSearchDatalist",
+            "placeholder": "Ciudad",
+            "items": [
+                {
+                    "value": "Valencia"
+                },
+                {
+                    "value": "Sevilla"
+                },
+                {
+                    "value": "Granada"
+                }
+            ]
+        },
+        "button": {
+            "type": "submit",
+            "text": "Buscar",
+            "isPink": true
+        },
+        "bottom": [
+            {
+                "text": "Los mejores restaurantes de la ciudad",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": true
+                }
+            },
+            {
+                "text": "Reserva en un solo click",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": true
+                }
+            },
+            {
+                "text": "Una experiencia culinaria nunca vista",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": true
+                }
+            }
+        ]
+    },
+    "cities": {
+        "title": {
+            "text": "Nuestros restaurantes en las principales ciudades de España",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            },
+            "subtitle": {
+                "text": "Proximamente en más ciudades",
+                "attrs": {}
+            }
+        },
+        "items": [
+            {
+                "text": "Valencia",
+                "href": "/search/?zone=Valencia",
+                "label": "cities-valencia",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": true
+                },
+                "picture": {
+                    "link": "/img/cities/small/valencia.webp",
+                    "width": 200,
+                    "height": 100,
+                    "alt": "Valencia city image"
+                }
+            },
+            {
+                "text": "Granada",
+                "href": "/search/?zone=Granada",
+                "label": "cities-granada",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": true
+                },
+                "picture": {
+                    "link": "/img/cities/small/granada.webp",
+                    "width": 200,
+                    "height": 100,
+                    "alt": "Granada city image"
+                }
+            },
+            {
+                "text": "Sevilla",
+                "href": "/search/?zone=Sevilla",
+                "label": "cities-sevilla",
+                "attrs": {
+                    "isWhite": true,
+                    "isBold": true
+                },
+                "picture": {
+                    "link": "/img/cities/small/sevilla.webp",
+                    "width": 200,
+                    "height": 100,
+                    "alt": "Sevilla city image"
+                }
+            }
+        ],
+        "attrs": {
+
+        }
+    }
+}
