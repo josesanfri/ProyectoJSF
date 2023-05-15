@@ -1,8 +1,25 @@
 <template>
     <section>
-        <hgroup style="grid-column: 1 / -1">
-            <h1>La zona {{ zone || "La esquina gourmet" }}</h1>
-        </hgroup>
+        <basic-text-title
+            v-if="zone != null"
+            class="search-title"
+            :title="{
+                text:`Resultados de tu busqueda en ${zone}`,
+                attrs: {
+                    textXl: true
+                }
+            }"
+        />
+        <basic-text-title
+            v-else
+            class="search-title"
+            :title="{
+                text:`Resultados en La Esquina Gourmet`,
+                attrs: {
+                    textXl: true
+                }
+            }"
+        />
         <nav class="search-box">
             <card-restaurant
                 v-for="restaurant in results"
@@ -10,7 +27,7 @@
                 :data="restaurant"
                 @click.native="goOutPage"
             />
-            <section class="search-box-buttons">
+            <section class="search-box-buttons" v-if="results.length > 30">
                 <basic-button-solid
                     :attrs="{
                         isBlue: true,
@@ -149,18 +166,17 @@ export default {
 
 <style lang="sass" scoped>
     .search
+        &-title
+            @apply col-span-full p-8
+            border-bottom: 1px solid #e4e9f2
+
         &-box
-            overflow-y: scroll
-            display: grid
-            grid-template-columns: 1fr
+            @apply grid grid-cols-1 overflow-y-scroll
 
             &::-webkit-scrollbar
                 display: none
 
             &-buttons
-                grid-column: 1 / -1
-                display: flex
-                justify-content: center
-                gap: 2rem
+                @apply col-span-full flex justify-center gap-8
                 max-height: 40px    
 </style>

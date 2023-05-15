@@ -43,7 +43,7 @@
                 <nuxt-link :to="'/'" class='navigation-logo-item'>
                 <img
                     decoding="async"
-                    width="60" height="30"
+                    width="55" height="30"
                     src="/img/logo/logo.webp"
                     alt="logo"
                     format="webp"

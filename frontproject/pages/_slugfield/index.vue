@@ -17,20 +17,61 @@
             <details>
                 <summary>
                     <basic-text-title
-                        :title="'Menus'"
-                        :attrs="{
-                            isBold: true,
-                        }"
+                        :title="textSlug.menu.title"
+                        :attrs="textSlug.menu.attrs"
                     />
                 </summary>
+                <basic-link
+                    v-for="menu in menuData"
+                    :key="menu.id"
+                    :href="'/'+menu.id+'/'"
+                    :label="'link-restaurant-'+menu.id"
+                    :text="menu.name"
+                    :attrs="{
+                        isHover: true,
+                    }"
+                />
             </details>
         </section>
-        <section></section>
+        <section>
+            <basic-text-title
+                :title="{
+                    text:`${restaurantData.name_restaurant}`,
+                    attrs: {
+                        textXl: true
+                    }
+                }"
+            />
+            <basic-text-paragraph
+                :text="{
+                    text:`${restaurantData.description}`,
+                    attrs: {
+                        textXl: true
+                    }
+                }"
+            />
+            <basic-list
+                :items="textSlug.times.items"
+            />
+            <basic-link-a
+                :href="'https://www.google.com/maps/search/?api=1&query='+restaurantData.address.latitude+','+restaurantData.address.longitude"
+                :label="'link-restaurant-'+restaurantData.slug_restaurant"
+                :text="textSlug.map.label"
+                :icon="textSlug.map.icon"
+                :attrs="textSlug.map.attrs"
+            />
+            <basic-text-paragraph-icon
+                :text="`${restaurantData.primary_phone}`"
+                :icon="textSlug.phone.icon"
+                :attrs="textSlug.phone.attrs"
+            />
+        </section>
         <section></section>
     </section>
 </template>
 
 <script>
+import textSlug from '~/content/pages/slugfield/restaurant.json'
 import getToken from '~/utils/token/getToken'
 
 export default {
@@ -72,11 +113,14 @@ export default {
             }
 
             console.log(restaurantData)
-            console.log(menuData)
+            console.log(menuData.results)
+
+            menuData = menuData.results
             
             return { 
                 restaurantData,
                 menuData,
+                textSlug: textSlug,
                 titlePage: `${restaurantData.address.street}, ${restaurantData.address.number}, ${restaurantData.address.region}`,
             }
         } catch {
@@ -97,7 +141,7 @@ export default {
     },
     data() {
         return {
-            loadImages: false
+            loadImages: false,
         }
     },
     methods: {

@@ -20,23 +20,35 @@
                         :label="'link-restaurant-'+data.slug_restaurant"
                         :text="data.name_restaurant"
                         :attrs="{
-                            isBlue: true,
+                            isHover: true,
                         }"
                     />
                 </hgroup>
                 <basic-text-paragraph
                     :text="data.address.street + ', ' + data.address.number + ', ' + data.address.city"
                 />
+                <basic-list
+                    :items="cardRestaurant.times.items"
+                />
             </article>
             <article>
                 <basic-link
                     class="card-restaurant-title"
                     :href="'/'+data.slug_restaurant+'/'"
-                    :label="'link-property-'+data.slug_restaurant"
-                    :text="'Ver restaurante'"
-                    :attrs="{
-                        isBlue: true,
-                    }"
+                    :label="'link-restaurant-'+data.slug_restaurant"
+                    :text="cardRestaurant.button.label"
+                    :icon="cardRestaurant.button.icon"
+                    :attrs="cardRestaurant.button.attrs"
+                />
+            </article>
+            <article>
+                <basic-link-a
+                    class="card-restaurant-title"
+                    :href="'https://www.google.com/maps/search/?api=1&query='+data.address.latitude+','+data.address.longitude"
+                    :label="'link-restaurant-'+data.slug_restaurant"
+                    :text="cardRestaurant.map.label"
+                    :icon="cardRestaurant.map.icon"
+                    :attrs="cardRestaurant.map.attrs"
                 />
             </article>
         </section>
@@ -44,11 +56,12 @@
 </template>
 
 <script>
-import getToken from "~/utils/token/getToken";
+import cardRestaurant from '~/content/components/card/restaurant.json'
 
 export default {
     data() {
         return {
+            cardRestaurant: cardRestaurant
         };
     },
     props: {
@@ -69,8 +82,8 @@ export default {
         @apply p-8
         border-bottom: 1px solid #e4e9f2
 
-        &::hover
-           @include bg-gray-light
+        &:hover
+           @include bg-white-variant
 
         &-section
             @apply grid grid-cols-1 items-center
