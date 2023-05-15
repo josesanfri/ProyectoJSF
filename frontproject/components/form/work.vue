@@ -93,8 +93,6 @@ export default {
                 let token = await getToken(this.$store)
                 let data
 
-                console.log(file)
-
                 if(!allowedExtensions.exec(file)){
                     alert('Solo se acepta pdf');
                 } else {

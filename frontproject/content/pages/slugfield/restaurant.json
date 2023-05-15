@@ -1,0 +1,73 @@
+{
+    "menu": {
+        "title": {
+            "text": "Menú",
+            "attrs": {
+                
+            }
+        }
+    },
+    "phone": {
+        "icon": {
+            "image": {
+                "src": "/icon/base/black/phone.webp",
+                "alt": "copyright icon",
+                "width": 20,
+                "height": 20,
+                "attrs": {
+                    "needContrast": true
+                }
+            }, 
+            "sources": [{
+                "srcset": "/icon/base/black/phone.webp",
+                "media":"(min-width: 320px)"
+            }]
+        },
+        "attrs": {
+            "isHover": true,
+            "isCenter": true
+        }
+    },
+    "times": {
+        "items": [
+            {
+                "text": "Desayunos: 9:00 a 12:00",
+                "attrs": {}
+            },
+            {
+                "text": "Mediodía : 13:00 a 16:30",
+                "attrs": {}
+            },
+            {
+                "text": "Noche domingo a miércoles: 20:00 a 23:30",
+                "attrs": {}
+            },
+            {
+                "text": "Noche de jueves a sábado: 20:00 a 0:00",
+                "attrs": {}
+            }
+        ]
+    },
+    "map": {
+        "label": "Cómo llegar",
+        "icon": {
+            "image": {
+                "src": "/icon/base/black/location-dot.webp",
+                "alt": "copyright icon",
+                "width": 20,
+                "height": 20,
+                "attrs": {
+                    "needContrast": true
+                }
+            }, 
+            "sources": [{
+                "srcset": "/icon/base/black/location-dot.webp",
+                "media":"(min-width: 320px)"
+            }]
+        },
+        "attrs": {
+            "isHover": true,
+            "isCenter": true
+        }
+    }
+}

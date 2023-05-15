@@ -27,11 +27,7 @@ STATIC_URL = '/static_dir/'
 STATICFILES_DIRS = [ BASE_DIR / 'static_dir'] 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-print("MEDIA ROOT DAD", MEDIA_ROOT)
-print("BASE DIR DAD", BASE_DIR)
-print("STATIC DIR DAD", STATICFILES_DIRS)
+MEDIA_ROOT = [ BASE_DIR / 'media' ]
 
 # REST FRAMEWORK LOCAL OPTIONS
 REST_FRAMEWORK = REST_FRAMEWORK | {
