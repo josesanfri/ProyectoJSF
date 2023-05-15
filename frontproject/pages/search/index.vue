@@ -4,13 +4,12 @@
             <h1>La zona {{ zone || "La esquina gourmet" }}</h1>
         </hgroup>
         <nav class="search-box">
-            <!--<card-property
-                v-for="prop in results"
-                :key="prop.id"
-                :image="''"
-                :data="prop"
+            <card-restaurant
+                v-for="restaurant in results"
+                :key="restaurant.id"
+                :data="restaurant"
                 @click.native="goOutPage"
-            />-->
+            />
             <section class="search-box-buttons">
                 <basic-button-solid
                     :attrs="{
@@ -86,6 +85,7 @@ export default {
         }
 
         let { results, ...dataResponse } = resRestaurant.data;
+
         let zone = query?.zone;
         return {
             results,
@@ -149,30 +149,10 @@ export default {
 
 <style lang="sass" scoped>
     .search
-        display: grid
-        padding: 1rem
-        padding-top: 100px
-        gap: 1rem
-
-        @media (min-width: 1024px)
-            grid-template-columns: auto 320px
-
-        @media (min-width: 1200px)
-            grid-template-columns: auto 620px
-
         &-box
-            height: 85vh
             overflow-y: scroll
             display: grid
             grid-template-columns: 1fr
-            padding: .5rem
-            gap: 1.5rem
-
-            @media (min-width: 768px)
-                grid-template-columns: repeat(3, 1fr)
-
-            @media (min-width: 1024px)
-                grid-column: 1 / 2
 
             &::-webkit-scrollbar
                 display: none
