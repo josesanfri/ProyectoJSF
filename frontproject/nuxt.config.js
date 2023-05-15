@@ -41,12 +41,25 @@ export default {
 
 	components: true,
 
-	buildModules: ["@nuxtjs/tailwindcss"],
+	target: 'default',
+	buildModules: [
+		"@nuxtjs/tailwindcss",
+		'@nuxt/image'
+	],
 
-	modules: ["@nuxtjs/axios"],
+	modules: [
+		"@nuxtjs/axios",
+	],
 
 	axios: {
 		baseURL: "http://localhost:8000/api",
+	},
+
+	image: {
+		provider: 'twicpics',
+		twicpics: {
+			baseURL: 'http://localhost:8000/media/'
+		}
 	},
 
 	static: {
