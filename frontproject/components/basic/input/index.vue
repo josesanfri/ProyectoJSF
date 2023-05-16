@@ -45,15 +45,9 @@
                 :name="name"
                 :form="form"
                 :tabindex="tabIndex"
-                :disabled="readOnly"
+                :disabled="readOnly" 
             >
-                <option
-                    v-for="item in attrs.list"
-                    :key="item.value"
-                    :value="item.value"
-                >
-                    {{ item.text }}
-                </option>
+                <option v-for="(item, index) in items" :key="index" :value="item.value">{{ item.text }}</option>
             </select>
         </template>
 
@@ -73,6 +67,65 @@
                 :tabindex="tabIndex"
                 style="cursor: pointer"
             />
+        </template>
+
+        <template v-else-if="type == 'date'">
+            {{ text }}
+            <vc-date-picker 
+                color="blue"
+                :model-config="{type: 'string', mask: 'MM/DD/YYYY'}"
+                class="basic-input date"
+                :popover="{ visibility: 'click' }"
+            >
+                <template  v-slot="{ inputValue, inputEvents }">
+                    <input
+                        autocomplete="off"
+                        :value="inputValue"
+                        v-on="inputEvents"
+                        :placeholder="placeholder"
+                        :name="name"
+                        :form="form"
+                    />
+                    <basic-image 
+                        :image=" {
+                            src: '/icon/base/black/calendar-days.webp',
+                            alt: 'chevron up icon',
+                            width: 20,
+                            height: 20,
+                            attrs: {
+                                needContrast: true
+                            }
+                        }"
+                        :sources=" [{
+                            srcset: '/icon/base/black/calendar-days.webp',
+                            media:'(min-width: 320px)',
+                        }]"       
+                    />
+                </template>
+            </vc-date-picker>
+        </template>
+
+        <template v-else-if="type == 'time'">
+            {{ text }}
+            <vc-date-picker 
+                color="blue"
+                mode="time"
+                is24hr
+                :valid-hours="{ min: 13, max: 23 }"
+                :minute-increment="15"
+                class="basic-input date"
+            >
+                <template  v-slot="{ inputValue, inputEvents }">
+                    <input
+                        autocomplete="off"
+                        :value="inputValue"
+                        v-on="inputEvents"
+                        :placeholder="placeholder"
+                        :name="name"
+                        :form="form"
+                    />
+                </template>
+            </vc-date-picker>
         </template>
 
         <template v-else-if="type == 'textarea'">
@@ -108,6 +161,13 @@
                 :tabindex="tabIndex"
                 :readonly="readOnly"
             />
+            <datalist v-if="datalist.items" :id="datalist.list_id">
+                <template v-for="item in datalist.items">
+                    <option :key="item.value" :value="item.value">
+                        {{ item.value }}
+                    </option>
+                </template>
+            </datalist>
         </template>
     </label>
 </template>
@@ -173,6 +233,10 @@ export default {
             type: String,
             required: false,
             default: "",
+        },
+        items: {
+            type: Array,
+            required: true
         },
         datalist: {
             type: Object,

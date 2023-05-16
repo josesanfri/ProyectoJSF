@@ -27,7 +27,7 @@ STATIC_URL = '/static_dir/'
 STATICFILES_DIRS = [ BASE_DIR / 'static_dir'] 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = [ BASE_DIR / 'media' ]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # REST FRAMEWORK LOCAL OPTIONS
 REST_FRAMEWORK = REST_FRAMEWORK | {

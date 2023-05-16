@@ -26,6 +26,11 @@ export default {
 		},
 	},
 
+	router: {
+		prefetchLinks: false,
+		middleware: ['cookies']
+	},
+
 	css: ["~/assets/sass/main.sass"],
 
 	components: true,
@@ -36,6 +41,10 @@ export default {
 		},
 		{
 			src: '~/plugins/axiosIntern'
+		},
+		{
+			src: '~/plugins/vCalendar.client',
+			mode: 'client'
 		},
 	],
 
