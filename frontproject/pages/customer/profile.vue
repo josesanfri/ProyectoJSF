@@ -2,7 +2,7 @@
     <section>
         <basic-text-title
             class="cover-title"
-            :title="textCustomerProfile.cover.title" 
+            :title="formCustomerProfile.cover.title" 
         />
         
         <article class="renter-profile-section">
@@ -17,13 +17,11 @@
 </template>
 
 <script>
-import textCustomerProfile from '~/content/pages/customer/profile/text.json'
-import formCustomerProfile from '~/content/components/form/customerProfile.json'
+import formCustomerProfile from '~/content/components/form/profile.json'
 
 export default {
     async asyncData(){
         return{
-            textCustomerProfile: textCustomerProfile,
             formCustomerProfile: formCustomerProfile
         }
     },

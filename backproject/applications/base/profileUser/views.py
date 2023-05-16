@@ -32,6 +32,13 @@ class CreateCustomerProfileView(CreateAPIView):
     def get_serializer(self, *args, **kwargs):
         if isinstance(self.request.data, QueryDict):
             data_dict = self.request.data.dict()
+
+            key_list = ['address']
+
+            for key in key_list:
+                if key in self.request.data:
+                    data_dict[key] = json.loads(self.request.data.get(key))    
+                    
             return CreateCustomerProfileSerializer(data=data_dict)
         
         else:   
@@ -57,11 +64,23 @@ class RetrieveUpdateDestroyCustomerProfileView(RetrieveUpdateDestroyAPIView):
         return Response(data=data, status=status.HTTP_200_OK)
 
     def get_serializer(self, *args, **kwargs):
+        """We need to parse self.request.data in case it is a dict or a querydict
+
+        Returns:
+            ModelSerializer: serializer for Renter Profile
+        """
         instance = self.get_object()
         
         if self.request.method == 'PUT':
             if isinstance(self.request.data, QueryDict):
                 data_dict = self.request.data.dict()
+
+                key_list = ['address']
+
+                for key in key_list:
+                    if key in self.request.data:
+                        data_dict[key] = json.loads(self.request.data.get(key))    
+                
                 return ViewCustomerProfileSerializer(instance=instance, data=data_dict)
             
             else:   
