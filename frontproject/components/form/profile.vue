@@ -4,7 +4,7 @@
             <!-- Foto perfil -->
             <picture class="custaccount-section-main-img">
                 <label for="customer_img">
-                    <img loading="lazy" decoding="async" class="m-auto" src="" alt="Image profile">
+                    <nuxt-img loading="lazy" decoding="async" class="m-auto" :src="resProfile.image ? resProfile.image : 'img/logo/default.avif'" alt="Image profile">
                     <input type="file" name="customer_img" id="customer_img" class="customer-photo" style="display: none;">
                 </label>
             </picture>
@@ -68,21 +68,6 @@
                     :title="profile.about.title"
                     :attrs="profile.about.title.attrs"
                 />
-                <article id="occupationBox" class="custaccount-article-occupation">
-                    <basic-input
-                        v-for="input in profile.about.inputs"
-                        :key="input.id"
-
-                        :class="{'grid-long': input.attrs.isLong}"
-                        :name="input.name"
-                        :id="input.id"
-                        :text="input.text"
-                        :type="input.type"
-                        :attrs="input.attrs"
-                        :form="input.form"
-                        :value="resProfile[input.name] ? resProfile[input.name] : ''"
-                    />
-                </article>
                 <ul class="custaccount-details-list">
                     <li
                         v-for="input in profile.genre.inputs"
@@ -132,7 +117,7 @@ export default {
         /* GET CUSTOMER PROFILE */
         try{
             if(process.client){
-                let response = await this.$axiosAPI.get(`profile/customer/${user.user_id}/`,
+                let response = await this.$axiosAPI.get(`profile/user/${user.user_id}/`,
                     token ? { 'Authorization': token } : {}
                 ).then( res => {
 
@@ -142,7 +127,7 @@ export default {
 
                 })
             } else {
-                let response = await this.$axiosIntern.get(`profile/customer/${user.user_id}/`,
+                let response = await this.$axiosIntern.get(`profile/user/${user.user_id}/`,
                     token ? { 'Authorization': token } : {}
                 ).then( res => {
 
@@ -173,19 +158,20 @@ export default {
             const formProfile = new FormData(profileForm)
             const formAddress = new FormData(addressForm)
 
-            formGuarantor.set('renter', parseInt(this.$store.state.auth.user.user_id))
             formAddress.set('zone', 2)
             formProfile.set('address', JSON.stringify(Object.fromEntries(formAddress)))
             formProfile.append('user', parseInt(this.$store.state.auth.user.user_id))
 
+            console.log("formProfile: ", formProfile)
+
             let data
             if( Object.keys(this.resProfile).length == 0 ) {
-                data = await this.$axiosAPI.post( 'profile/renter/', formProfile,
+                data = await this.$axiosAPI.post( 'profile/user/', formProfile,
                     token ? { 'Authorization': token } : {}
                 )
             } 
             else {
-                data = await this.$axiosAPI.put( `profile/renter/${this.$store.state.auth.user.user_id}/`, formProfile,
+                data = await this.$axiosAPI.put( `profile/user/${this.$store.state.auth.user.user_id}/`, formProfile,
                     token ? { 'Authorization': token } : {}
                 )
             }
