@@ -9,7 +9,7 @@ from .models import Reserve
 
 # Register your models here.
 class ReserveAdmin(admin.ModelAdmin):
-    list_display= ['id', 'customer', 'restaurant', 'num_customers', 'confirmed_date', 'status', 'created']
+    list_display= ['id', 'customer', 'restaurant', 'num_customers', 'confirmed_date', 'confirmed_time', 'status', 'created']
     list_filter = ['status']
     search_fields = ['id']
     list_per_page = 40

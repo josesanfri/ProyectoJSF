@@ -1,0 +1,27 @@
+@import ~/assets/sass/theme/light/color
+@import ~/assets/sass/components/basics/text/paragraph/paragraph
+
+@mixin message-alert
+    @include p-basic
+    @apply flex p-5 rounded
+    animation: opacity-ease-in
+    animation-duration: 1s
+    animation-fill-mode: forwards
+
+@mixin danger-alert
+    @apply bg-red-100
+
+@mixin success-alert
+    @apply bg-green-100
+
+@mixin warning-alert
+    @apply bg-yellow-100
+
+@mixin info-alert
+    @apply bg-blue-100
+
+@keyframes opacity-ease-in
+    0%
+        opacity: 0
+    100%
+        opacity: 1

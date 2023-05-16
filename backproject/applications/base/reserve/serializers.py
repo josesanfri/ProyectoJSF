@@ -53,7 +53,7 @@ class CreateReserveSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Reserve
-        fields = ['id', 'restaurant', 'customer', 'num_customers', 'confirmed_date']
+        fields = ['id', 'restaurant', 'customer', 'num_customers', 'confirmed_date', 'confirmed_time']
 
 class StaffCreateReserveSerializer(serializers.ModelSerializer):
     restaurant = serializers.PrimaryKeyRelatedField(many=False, queryset = Restaurant.objects.all())
@@ -61,7 +61,7 @@ class StaffCreateReserveSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Reserve
-        fields = ['id', 'restaurant', 'customer', 'num_customers', 'confirmed_date']
+        fields = ['id', 'restaurant', 'customer', 'num_customers', 'confirmed_date', 'confirmed_time']
 
     def to_representation(self, instance):         
         ret = super().to_representation(instance)   

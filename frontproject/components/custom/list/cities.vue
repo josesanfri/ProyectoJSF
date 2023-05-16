@@ -75,7 +75,7 @@ export default {
 
 <style lang="sass" scoped>
 .section
-    padding: 1rem
+    @apply p-4 text-center
 
     &__title
         @apply flex justify-center

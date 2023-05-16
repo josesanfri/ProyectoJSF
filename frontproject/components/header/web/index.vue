@@ -81,9 +81,9 @@
                     @click="navOpenClose"
                     v-if="user_type"
                 >
-                    <basic-link-normal
+                    <basic-link
                         v-if="user_type=='CUS'"
-                        :href="'/'"
+                        :href="'/customer/profile/'"
                         :label="headerText.panel.label" 
                         :text="headerText.panel.text"
                     />
