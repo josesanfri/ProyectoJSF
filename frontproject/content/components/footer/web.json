@@ -11,7 +11,7 @@
             {
                 "text": "Nuestra historia",
                 "label": "link-about-us",
-                "href": "/about/",
+                "href": "/",
                 "attrs": {
                     "isWhite": true,
                     "isBold": false
@@ -68,7 +68,7 @@
             {
                 "text": "Política sobre la solicitud de empleo",
                 "label": "link-about-terms",
-                "href": "/about/job-application/",
+                "href": "/",
                 "attrs": {
                     "isWhite": true,
                     "isBold": false
@@ -77,7 +77,7 @@
             {
                 "text": "Política sobre las redes sociales",
                 "label": "link-about-terms-prereserve",
-                "href": "/about/social-media/",
+                "href": "/",
                 "attrs": {
                     "isWhite": true,
                     "isBold": false
@@ -119,16 +119,16 @@
                 },
                 "location": "Valencia, Paseo Facultades, 6",
                 "locationLabel": "contact-office-valencia",
-                "locationLink": "",
+                "locationLink": "/",
                 "phone": "+ 34 611 221 121",
                 "phoneLabel": "contact-phone-valencia",
-                "phoneLink": "tel://34691914166",
+                "phoneLink": "/",
                 "email": "valencia@leg.es",
                 "emailLabel": "contact-email-valencia",
-                "emailLink": "mailto:equipo@leg.es",
+                "emailLink": "/",
                 "whatsapp": "Envianos un Whatsapp",
                 "whatsappLabel": "contact-whatsapp-valencia",
-                "whatsappLink": ""
+                "whatsappLink": "/"
             }
         ]
     },

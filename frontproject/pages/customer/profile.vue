@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="min-height">
         <basic-text-title
             class="cover-title"
             :title="formCustomerProfile.cover.title" 
@@ -43,6 +43,9 @@ export default {
 <style lang="sass">
 @import ~/assets/sass/utils/breakpoints
 @import ~/assets/sass/theme/light/color
+
+.min-height
+    min-height: 65vh
 
 .cover-title
     @include bg-gray-soft 

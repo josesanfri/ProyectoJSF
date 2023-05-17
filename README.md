@@ -32,9 +32,15 @@
       - Command: ALTER USER name-of-user WITH PASSWORD 'password';
    - Grant privileges to database
       - Command: GRANT ALL PRIVILEGES ON DATABASE name-of-database TO name-of-user;
+   - Enter database and create extensions
+      - Command: \c name-of-database
+      - Command: CREATE EXTENSION IF NOT EXISTS unaccent;
+      - Command: CREATE EXTENSION IF NOT EXISTS pg_trgm;
 
 - Backend Steps
+   - Recommended python 3.10
    - Turn on the virtual environment
+      - Command: envback\Scripts\activate.bat
    - Create the migrations
       - Command: python manage.py makemigrations
    - Apply the migrations to data base
@@ -43,12 +49,13 @@
       - Command: python manage.py runserver
 
 - Frontend Steps
+   - Recommended node 16.20 LTS
    - Install Yarn with NPM
-      - npm install yarn
+      - Command: npm install yarn
    - Install modules to run proyect
-      - Yarn install
+      - Command: yarn install
    - Start server
-      - Dev: Yarn dev -o
+      - Command: yarn doit
       
 # DataBase
 ![](https://github.com/josesanfri/ProyectoJSF/blob/main/TFGProjectJSF.drawio.png)

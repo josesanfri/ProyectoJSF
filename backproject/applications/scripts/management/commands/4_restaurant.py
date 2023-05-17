@@ -27,7 +27,7 @@ class Command(BaseCommand):
 
             restaurant = Restaurant()
             restaurant.address = address_set[random.randint(0, (len(address_set)-1))]
-            restaurant.name_restaurant = str("La esquina Gourmet"),
+            restaurant.name_restaurant = 'La esquina Gourmet',
             restaurant.square_meters = random.randint(40,150)
             restaurant.caption_user = staff_set[random.randint(0, (len(staff_set)-1))]
             restaurant.primary_phone = str(random.randint(100000000, 999999999));

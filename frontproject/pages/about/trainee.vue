@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="min-height">
         <!-- Section form -->
         <section class="trainee-form-section">
             <basic-text-title :title="textTrainee.request.title" />
@@ -84,6 +84,9 @@ export default {
 <style lang="sass" scoped>
 @import ~/assets/sass/utils/breakpoints
 @import ~/assets/sass/theme/light/color
+
+.min-height
+    min-height: 65vh
 
 .trainee
     &-form-section

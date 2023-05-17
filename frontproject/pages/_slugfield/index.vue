@@ -1,7 +1,7 @@
 <template>
-    <section>
+    <section class="min-height">
         <section>
-            <section>
+            <section v-if="restaurantData.media_restaurant.length > 0">
                 <section class="carousel-restaurants-slider">
                     <section class="slider-restaurants" ref="slider">
                         <section
@@ -211,11 +211,11 @@ export default {
                 let profile
                 try {
                     if(process.client) {
-                        profile = await this.$axiosAPI.get(`profile/user/${this.$store.state.auth.user.user_id}/`,
+                        profile = await this.$axiosAPI.get(`profile/customer/${this.$store.state.auth.user.user_id}/`,
                             token ? { 'Authorization': token } : {}
                         )
                     }else{
-                        profile = await this.$axiosIntern.get(`profile/user/${this.$store.state.auth.user.user_id}/`,
+                        profile = await this.$axiosIntern.get(`profile/customer/${this.$store.state.auth.user.user_id}/`,
                             token ? { 'Authorization': token } : {}
                         )
                     }   
@@ -320,6 +320,9 @@ export default {
 @import ~/assets/sass/utils/breakpoints
 @import ~/assets/sass/theme/light/color
 @import ~/assets/sass/components/basics/dropdown/dropdown
+
+.min-height
+    min-height: 65vh
 
 .carousel-restaurants
     &-section

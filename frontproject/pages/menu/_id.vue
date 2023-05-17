@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="min-height">
         <section class="menu-section">
             <basic-text-title
                 :title="{
@@ -18,10 +18,14 @@
                         }
                     }" 
                 />
-                <ul v-for="starter in starters" :key="starter.id">
-                    <li>
-                        {{ starter.name }} - {{ starter.price }} <br>
-                        {{ starter.ingredients }}
+                <ul>
+                    <li class="menu-li" v-for="starter in starters" :key="starter.id">
+                        <basic-text-paragraph
+                            :text="`${ starter.name } - ${ starter.price }€`"
+                        />
+                        <basic-text-paragraph
+                            :text="`${ starter.ingredients }`"
+                        />
                     </li>
                 </ul>
             </article>
@@ -34,10 +38,14 @@
                         }
                     }" 
                 />
-                <ul v-for="main in mains" :key="main.id">
-                    <li>
-                        {{ main.name }} - {{ main.price }} <br>
-                        {{ main.ingredients }}
+                <ul>
+                    <li class="menu-li" v-for="main in mains" :key="main.id">
+                        <basic-text-paragraph
+                            :text="`${ main.name } - ${ main.price }€`"
+                        />
+                        <basic-text-paragraph
+                            :text="`${ main.ingredients }`"
+                        />
                     </li>
                 </ul>
             
@@ -51,10 +59,14 @@
                         }
                     }" 
                 />
-                <ul v-for="dessert in desserts" :key="dessert.id">
-                    <li>
-                        {{ dessert.name }} - {{ dessert.price }} <br>
-                        {{ dessert.ingredients }}
+                <ul>
+                    <li class="menu-li" v-for="dessert in desserts" :key="dessert.id">
+                        <basic-text-paragraph
+                            :text="`${ dessert.name } - ${ dessert.price }€`"
+                        />
+                        <basic-text-paragraph
+                            :text="`${ dessert.ingredients }`"
+                        />
                     </li>
                 </ul>
             </article>
@@ -111,7 +123,6 @@ export default {
                 )
                 .then((getPlates) => (this.allPlates = getPlates.data.results));
             }
-            console.log("platos:", this.allPlates)
         } catch (error) {
             console.log(error)
         }
@@ -123,10 +134,6 @@ export default {
         this.starters = this.allPlates.filter(plate => starterIds.includes(plate.id))
         this.mains = this.allPlates.filter(plate => mainIds.includes(plate.id))
         this.desserts = this.allPlates.filter(plate => dessertIds.includes(plate.id))
-
-        console.log("entrantes:", this.starters)
-        console.log("principales:", this.mains)
-        console.log("postres:", this.desserts)
     },  
 }
 </script>
@@ -135,8 +142,15 @@ export default {
 @import ~/assets/sass/utils/breakpoints
 @import ~/assets/sass/theme/light/color
 
+.min-height
+    min-height: 65vh
+
 .menu
     &-section
         @include bg-primary
         @apply p-8 flex flex-col
+
+    &-li
+        @apply flex flex-col gap-2 pb-2 pt-2
+        border-bottom: 1px solid black
 </style>

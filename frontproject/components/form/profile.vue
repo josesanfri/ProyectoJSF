@@ -4,11 +4,11 @@
             <!-- Foto perfil -->
             <picture class="custaccount-section-main-img">
                 <label v-if="resProfile.image != null" for="customer_image">
-                    <nuxt-img loading="lazy" decoding="async" class="m-auto rounded-full" :src="resProfile.image" alt="Image profile" />
+                    <nuxt-img loading="lazy" decoding="async" class="m-auto rounded-full" style="height: 13rem;" :src="resProfile.image" alt="Image profile" />
                     <input form="profileForm" type="file" name="customer_img" id="customer_img" class="customer-photo" style="display: none;">
                 </label>
                 <label v-else for="customer_image">
-                    <img loading="lazy" decoding="async" class="m-auto rounded-full" style="width: 25%;" src="/img/user/user.png" alt="Image profile">
+                    <img loading="lazy" decoding="async" class="m-auto rounded-full" style="height: 13rem;" src="/img/user/user.png" alt="Image profile">
                     <input form="profileForm" type="file" name="image" id="customer_image" class="customer-photo" style="display: none;">
                 </label>
             </picture>

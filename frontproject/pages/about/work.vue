@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="min-height">
         <!-- Section form -->
         <section class="work-form-section">
             <basic-text-title :title="textWork.request.title" />
@@ -82,6 +82,9 @@ export default {
 <style lang="sass" scoped>
 @import ~/assets/sass/utils/breakpoints
 @import ~/assets/sass/theme/light/color
+
+.min-height
+    min-height: 65vh
 
 .work
     &-form-section
