@@ -1,0 +1,152 @@
+{
+    "menu": {
+        "title": {
+            "text": "Menús",
+            "attrs": {}
+        }
+    },
+    "phone": {
+        "icon": {
+            "image": {
+                "src": "/icon/base/black/phone.webp",
+                "alt": "copyright icon",
+                "width": 20,
+                "height": 20,
+                "attrs": {
+                    "needContrast": true
+                }
+            }, 
+            "sources": [{
+                "srcset": "/icon/base/black/phone.webp",
+                "media":"(min-width: 320px)"
+            }]
+        },
+        "attrs": {
+            "isHover": true,
+            "isCenter": true
+        }
+    },
+    "times": {
+        "items": [
+            {
+                "text": "Desayunos: 9:00 a 12:00",
+                "attrs": {}
+            },
+            {
+                "text": "Mediodía : 13:00 a 16:30",
+                "attrs": {}
+            },
+            {
+                "text": "Noche domingo a miércoles: 20:00 a 23:30",
+                "attrs": {}
+            },
+            {
+                "text": "Noche de jueves a sábado: 20:00 a 0:00",
+                "attrs": {}
+            }
+        ]
+    },
+    "map": {
+        "label": "Cómo llegar",
+        "icon": {
+            "image": {
+                "src": "/icon/base/black/location-dot.webp",
+                "alt": "copyright icon",
+                "width": 20,
+                "height": 20,
+                "attrs": {
+                    "needContrast": true
+                }
+            }, 
+            "sources": [{
+                "srcset": "/icon/base/black/location-dot.webp",
+                "media":"(min-width: 320px)"
+            }]
+        },
+        "attrs": {
+            "isHover": true,
+            "isCenter": true
+        }
+    },
+    "select": {
+        "title": {
+            "text": "Número de comensales",
+            "attrs": {
+                "textXl": true   
+            }
+        },
+        "placeholder": "Número de comensales",
+        "items": [
+            {
+                "text": "2",
+                "value": "2"
+            },
+            {
+                "text": "3",
+                "value": "3"
+            },
+            {
+                "text": "4",
+                "value": "4"
+            },
+            {
+                "text": "5",
+                "value": "5"
+            },
+            {
+                "text": "6",
+                "value": "6"
+            },
+            {
+                "text": "7",
+                "value": "7"
+            },
+            {
+                "text": "8",
+                "value": "8"
+            },
+            {
+                "text": "9",
+                "value": "9"
+            },
+            {
+                "text": "10",
+                "value": "10"
+            },
+            {
+                "text": "11",
+                "value": "11"
+            },
+            {
+                "text": "12",
+                "value": "12"
+            },
+            {
+                "text": "13",
+                "value": "13"
+            }
+        ]
+    },
+    "time": {
+        "title": {
+            "text": "Hora de la reserva",
+            "attrs": {
+                "textXl": true   
+            }
+        }
+    },
+    "reserve": {
+        "title": {
+            "text": "Fecha de la reserva",
+            "attrs": {
+                "textXl": true   
+            }
+        }
+    },
+    "reservebtn": {
+        "button": "Reservar",
+        "attrs": {
+            "isBlue": true
+        }
+    }
+}

@@ -18,6 +18,6 @@ urlpatterns = [
     path('api/suite/profile/', include(router.urls), name='profile'),
 
     # Views urls
-    path('api/profile/user/', CreateCustomerProfileView.as_view(), name='customer-profile-create'),
-    path('api/profile/user/<int:user>/', RetrieveUpdateDestroyCustomerProfileView.as_view(), name='customer-profile-detail'),
+    path('api/profile/customer/', CreateCustomerProfileView.as_view(), name='customer-profile-create'),
+    path('api/profile/customer/<int:user>/', RetrieveUpdateDestroyCustomerProfileView.as_view(), name='customer-profile-detail'),
 ]

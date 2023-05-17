@@ -26,6 +26,11 @@ export default {
 		},
 	},
 
+	router: {
+		prefetchLinks: false,
+		middleware: ['cookies']
+	},
+
 	css: ["~/assets/sass/main.sass"],
 
 	components: true,
@@ -37,16 +42,33 @@ export default {
 		{
 			src: '~/plugins/axiosIntern'
 		},
+		{
+			src: '~/plugins/vCalendar.client',
+			mode: 'client'
+		},
 	],
 
 	components: true,
 
-	buildModules: ["@nuxtjs/tailwindcss"],
+	target: 'default',
+	buildModules: [
+		"@nuxtjs/tailwindcss",
+		'@nuxt/image'
+	],
 
-	modules: ["@nuxtjs/axios"],
+	modules: [
+		"@nuxtjs/axios",
+	],
 
 	axios: {
 		baseURL: "http://localhost:8000/api",
+	},
+
+	image: {
+		provider: 'twicpics',
+		twicpics: {
+			baseURL: 'http://localhost:8000/media/'
+		}
 	},
 
 	static: {

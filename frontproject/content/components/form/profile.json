@@ -1,0 +1,240 @@
+{
+    "cover": {
+        "title": {
+            "text": "Mi perfil",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        }
+    },
+    "profile": {
+        "main": {
+            "inputs": [
+                {
+                    "text": "Nombre *",
+                    "id": "customer_name",
+                    "placeholder": "Nombre",
+                    "name": "first_name",
+                    "type": "text",
+                    "form": "profileForm",
+                    "attrs": {
+                        "flexColumn": true
+                    }
+                },
+                {
+                    "text": "Apellidos *",
+                    "id": "customer_lastname",
+                    "placeholder": "Apellidos",
+                    "name": "last_name",
+                    "type": "text",
+                    "form": "profileForm",
+                    "attrs": {
+                        "flexColumn": true
+                    }
+                },
+                {
+                    "text": "Fecha de nacimiento *",
+                    "id": "customer_date",
+                    "placeholder": "aaaa-mm-dd",
+                    "name": "birth_date",
+                    "type": "date",
+                    "form": "profileForm",
+                    "attrs": {
+                        "flexColumn": true,
+                        "isLong": true
+                    }
+                },
+                {
+                    "text": "Prefijo *",
+                    "id": "customer_phone_prefix",
+                    "placeholder": "Prefijo",
+                    "name": "prefix_phone",
+                    "type": "text",
+                    "form": "profileForm",
+                    "attrs": {
+                        "flexColumn": true
+                    }
+                },
+                {
+                    "text": "Teléfono *",
+                    "id": "customer_phone",
+                    "placeholder": "Teléfono",
+                    "name": "phone",
+                    "type": "text",
+                    "form": "profileForm",
+                    "attrs": {
+                        "flexColumn": true
+                    }
+                }
+            ]
+        },
+        "about": {
+            "title": {
+                "text": "Algo más personal",
+                "attrs": {
+                    "isBold": true
+                }
+            }
+        },
+        "genre": {
+            "inputs": [
+                {
+                    "text": "Género",
+                    "id": "customer_gender",
+                    "name": "gender",
+                    "type": "select",
+                    "form": "profileForm",
+                    "items": [
+                        {
+                            "value": "M",
+                            "text": "Hombre"
+                        },
+                        {
+                            "value": "F",
+                            "text": "Mujer"
+                        },
+                        {
+                            "value": "O",
+                            "text": "Otro"
+                        }
+                    ],
+                    "attrs": {
+                        "flexColumn": true
+                    }
+                },
+                {
+                    "text": "Me identifico como",
+                    "type": "text",
+                    "id": "customer_gender_other",
+                    "name": "annotation_gender",
+                    "placeholder": "...",
+                    "form": "profileForm",
+                    "attrs": {
+                        "flexColumn": true
+                    }
+                }
+            ]
+        }
+    },
+    "address": {
+        "title": {
+            "text": "Domicilio",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        },
+        "inputs": [
+            {
+                "text": "Calle (sin número) *",
+                "id": "customer_address",
+                "placeholder": "Calle (sin número) *",
+                "name": "street",
+                "type": "text",
+                "form": "addressForm",
+                "attrs": {
+                    "flexColumn": true
+                }
+            },
+            {
+                "text": "País *",
+                "id": "customer_country",
+                "placeholder": "País",
+                "name": "country",
+                "type": "text",
+                "form": "addressForm",
+                "attrs": {
+                    "flexColumn": true
+                }
+            },
+            {
+                "text": "Ciudad *",
+                "id": "customer_city",
+                "placeholder": "Ciudad",
+                "name": "city",
+                "type": "text",
+                "form": "addressForm",
+                "attrs": {
+                    "flexColumn": true
+                }
+            },
+            {
+                "text": "Provincia *",
+                "id": "customer_province",
+                "placeholder": "Provincia",
+                "name": "region",
+                "type": "text",
+                "form": "addressForm",
+                "attrs": {
+                    "flexColumn": true
+                }
+            },
+            {
+                "text": "Número *",
+                "id": "customer_address_num",
+                "placeholder": "Número",
+                "name": "number",
+                "type": "text",
+                "form": "addressForm",
+                "attrs": {
+                    "flexColumn": true
+                }
+            },
+            {
+                "text": "Piso *",
+                "id": "customer_address_floor",
+                "placeholder": "Piso",
+                "name": "floor",
+                "type": "text",
+                "form": "addressForm",
+                "attrs": {
+                    "flexColumn": true
+                }
+            },
+            {
+                "text": "Puerta *",
+                "id": "customer_address_door",
+                "placeholder": "Puerta",
+                "name": "door",
+                "type": "text",
+                "form": "addressForm",
+                "attrs": {
+                    "flexColumn": true
+                }
+            },
+            {
+                "text": "Escalera *",
+                "id": "customer_address_stair",
+                "placeholder": "Escalera",
+                "name": "stair",
+                "type": "text",
+                "form": "addressForm",
+                "attrs": {
+                    "flexColumn": true
+                }
+            },
+            {
+                "text": "Código postal *",
+                "id": "customer_address_cp",
+                "placeholder": "Código postal",
+                "name": "postal_code",
+                "type": "text",
+                "form": "addressForm",
+                "attrs": {
+                    "flexColumn": true
+                }
+            }
+        ]
+    },
+    "morePersonal": {
+        "title": "Algo más personal"
+    },
+    "submit": {
+        "type": "submit",
+        "text": "Guardar",
+        "attrs": {
+            "isBlue": true
+        }
+    }
+}

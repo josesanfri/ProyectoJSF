@@ -49,7 +49,7 @@ class CreateCustomerProfileSerializer(ModelSerializer):
         address_data = validated_data.pop('address')
         address = Address.objects.create(**address_data)
         
-        try:         
+        try:           
             customer_profile = CustomerProfile.objects.create(address=address, **validated_data)
         except Exception as e:
             print(e)

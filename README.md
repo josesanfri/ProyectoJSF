@@ -25,30 +25,99 @@
 # Usage
 - DataBase Steps (PSQL)
    - Create database
-      - Command: CREATE DATABASE name-of-database;
+
+      ```bash
+        CREATE DATABASE name-of-database;
+      ```
+      
    - Create user
-      - Command: CREATE USER name-of-user;
+
+      ```bash
+        CREATE USER name-of-user;
+      ```
+      
    - Set password to user
-      - Command: ALTER USER name-of-user WITH PASSWORD 'password';
+
+      ```bash
+        ALTER USER name-of-user WITH PASSWORD 'password';
+      ```
+      
    - Grant privileges to database
-      - Command: GRANT ALL PRIVILEGES ON DATABASE name-of-database TO name-of-user;
+
+      ```bash
+        GRANT ALL PRIVILEGES ON DATABASE name-of-database TO name-of-user;
+      ```
+      
+   - Enter database and create extensions
+
+      ```bash
+        \c name-of-database
+        CREATE EXTENSION IF NOT EXISTS unaccent;
+        CREATE EXTENSION IF NOT EXISTS pg_trgm;
+      ```
 
 - Backend Steps
+   - Recommended python 3.10
+   - Configure the core/settings/local.py file with your database data
    - Turn on the virtual environment
+
+      ```bash
+        envback\Scripts\activate.bat
+      ```
+      
    - Create the migrations
-      - Command: python manage.py makemigrations
+
+      ```bash
+        python manage.py makemigrations
+      ```
+      
    - Apply the migrations to data base
-      - Command: python manage.py migrate
-   - Start Server
-      - Command: python manage.py runserver
+
+      ```bash
+        python manage.py migrate
+      ```
+      
+   - Create a superuser
+
+      ```bash
+        python manage.py createsuperuser
+      ```
+      
+   - Run these codes to have some pre-defined data
+
+      ```bash
+        python manage.py 1_location
+        python manage.py 2_user
+        python manage.py 3_profile
+        python manage.py 4_restaurant
+        python manage.py 5_lead
+      ```
+      
+   - Start Server on http://localhost:8000/admin/
+
+       ```bash
+        python manage.py runserver
+      ```
 
 - Frontend Steps
+   - Recommended node 16.20 LTS
    - Install Yarn with NPM
-      - npm install yarn
+   
+      ```bash
+        npm install yarn
+      ```
+      
    - Install modules to run proyect
-      - Yarn install
-   - Start server
-      - Dev: Yarn dev -o
+
+      ```bash
+        yarn install
+      ```
+      
+   - Start server on http://localhost:3000
+
+      ```bash
+        yarn doit
+      ```
       
 # DataBase
 ![](https://github.com/josesanfri/ProyectoJSF/blob/main/TFGProjectJSF.drawio.png)

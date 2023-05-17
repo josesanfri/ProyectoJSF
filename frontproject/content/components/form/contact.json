@@ -83,7 +83,7 @@
         "type": "submit",
         "text": "Enviar",
         "attrs": {
-            "isPink": true,
+            "isBlue": true,
             "isLong": true
         }
     }

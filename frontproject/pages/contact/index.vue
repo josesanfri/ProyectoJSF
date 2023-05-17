@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="min-height">
         <section class="contact">
             <form-contact
                 :inputs="formContact.inputs"
@@ -35,6 +35,9 @@ export default {
 
 <style lang="sass" scoped>
 @import ~/assets/sass/utils/breakpoints
+
+.min-height
+    min-height: 65vh
 
 .contact
     @apply grid grid-cols-1

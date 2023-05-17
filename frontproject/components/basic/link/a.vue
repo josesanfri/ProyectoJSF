@@ -6,6 +6,7 @@
             'color-gray-dark': attrs.isGrayDark,
             'color-gray-light': attrs.isGrayLight,
             'color-primary': attrs.isBlue,
+            'hover-primary': attrs.isHover,
             'center': attrs.isCenter,
             'gap-picture': icon && hasGap
         }" 
@@ -70,6 +71,7 @@ export default {
                 isGrayLight: false,
                 isBlue: false,
                 isCenter: false,
+                isHover: false,
                 iconIsMarginAuto: true
             })
         },
@@ -84,27 +86,32 @@ export default {
 
 
 <style lang="sass" scoped>
-    @import ~/assets/sass/components/basics/link/link
-    @import ~/assets/sass/theme/light/color
+@import ~/assets/sass/components/basics/link/link
+@import ~/assets/sass/theme/light/color
 
-    .basic
-        @include link-basic
+.basic
+    @include link-basic
 
-    .color-white
-        @include color-white
-    
-    .color-gray-dark
-        @include color-gray-dark
+.color-white
+    @include color-white
 
-    .color-gray-light
-        @include color-gray-light
+.color-gray-dark
+    @include color-gray-dark
 
-    .color-primary
-        @include color-primary
+.color-gray-light
+    @include color-gray-light
 
-    .center
-        @apply flex justify-start
+.color-primary
+    @include color-primary
 
-    .gap-picture
-        @apply gap-2
+.center
+    @apply flex justify-start items-center
+
+.gap-picture
+    @apply gap-2
+
+.hover-primary
+    &:hover
+        @include color-primary-variant
+        transition: all 0.3s ease-in-out
 </style>
