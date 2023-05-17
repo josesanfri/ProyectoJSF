@@ -14,7 +14,7 @@ from rest_framework import serializers
 # local imports
 from .models import Menu
 from .serializers import MenusSerializer
-from applications.utils.permissions import IsObjAuthorOrStaff, IsAdminUser
+from applications.utils.permissions import IsObjAuthorOrStaff, IsAdminUser, IsCustomerOrAdminUser
 
 # Create your views here.
 class ListMenuView(ListAPIView):
@@ -40,7 +40,6 @@ class CreateMenuView(CreateAPIView):
         return response
     
 class RestrieveUpdateDestroyMenuView(RetrieveUpdateDestroyAPIView):
-    permission_classes = [IsObjAuthorOrStaff]
     queryset = Menu.objects.all()
     lookup_field = 'id'
     

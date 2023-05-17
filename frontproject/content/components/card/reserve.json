@@ -1,0 +1,14 @@
+{
+    "cover": {
+        "title": {
+            "text": "Mis reservas",
+            "attrs": {
+                "isBold": true,
+                "textXl": true
+            }
+        }
+    },
+    "reserveCode": "Codigo de reserva",
+    "from": "Fecha de la reserva",
+    "time": "Hora de la reserva"
+}

@@ -77,7 +77,7 @@
                 class="basic-input date"
                 :popover="{ visibility: 'click' }"
             >
-                <template  v-slot="{ inputValue, inputEvents }">
+                <template v-slot="{ inputValue, inputEvents }">
                     <input
                         autocomplete="off"
                         :value="inputValue"
@@ -257,7 +257,8 @@ export default {
             date: ''
         };
     },
-    methods: {},
+    methods: {
+    },
 };
 </script>
 

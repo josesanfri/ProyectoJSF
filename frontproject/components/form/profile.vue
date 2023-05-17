@@ -3,9 +3,13 @@
         <section class="custaccount-section-main">
             <!-- Foto perfil -->
             <picture class="custaccount-section-main-img">
-                <label for="customer_img">
-                    <nuxt-img loading="lazy" decoding="async" class="m-auto" :src="resProfile.image ? resProfile.image : 'img/logo/default.avif'" alt="Image profile">
-                    <input type="file" name="customer_img" id="customer_img" class="customer-photo" style="display: none;">
+                <label v-if="resProfile.image != null" for="customer_image">
+                    <nuxt-img loading="lazy" decoding="async" class="m-auto rounded-full" :src="resProfile.image" alt="Image profile" />
+                    <input form="profileForm" type="file" name="customer_img" id="customer_img" class="customer-photo" style="display: none;">
+                </label>
+                <label v-else for="customer_image">
+                    <img loading="lazy" decoding="async" class="m-auto rounded-full" style="width: 25%;" src="/img/user/user.png" alt="Image profile">
+                    <input form="profileForm" type="file" name="image" id="customer_image" class="customer-photo" style="display: none;">
                 </label>
             </picture>
             <!-- Datos personales -->
@@ -82,6 +86,7 @@
                             :name="input.name"
                             :attrs="input.attrs"
                             :form="input.form"
+                            :items="input.items"
                             :id="input.id"
                             :class="{'grid-long': input.attrs.isLong}"
                             :value="resProfile[input.name] ? resProfile[input.name] : ''"
@@ -113,35 +118,33 @@ export default {
     async mounted() {
         let token = await getToken(this.$store)
         const user = this.$store.state.auth.user
+        let response
         
         /* GET CUSTOMER PROFILE */
         try{
             if(process.client){
-                let response = await this.$axiosAPI.get(`profile/user/${user.user_id}/`,
+                response = await this.$axiosAPI.get(`profile/customer/${user.user_id}/`,
                     token ? { 'Authorization': token } : {}
                 ).then( res => {
-
                     let {address, ...data} = res.data
                     Object.keys(address).forEach( element => data[element] = address[element] )
                     return data
-
                 })
             } else {
-                let response = await this.$axiosIntern.get(`profile/user/${user.user_id}/`,
+                response = await this.$axiosIntern.get(`profile/customer/${user.user_id}/`,
                     token ? { 'Authorization': token } : {}
                 ).then( res => {
-
                     let {address, ...data} = res.data
                     Object.keys(address).forEach( element => data[element] = address[element] )
                     return data
-
                 })
             }
             
             this.resProfile = response
+            console.log("Mounted Profile: ", this.resProfile)
 
         } catch(error){
-            console.log("Error: ", error)
+            console.log("Error mounted: ", error)
             this.resProfile = {}
         }
 
@@ -166,12 +169,12 @@ export default {
 
             let data
             if( Object.keys(this.resProfile).length == 0 ) {
-                data = await this.$axiosAPI.post( 'profile/user/', formProfile,
+                data = await this.$axiosAPI.post( 'profile/customer/', formProfile,
                     token ? { 'Authorization': token } : {}
                 )
             } 
             else {
-                data = await this.$axiosAPI.put( `profile/user/${this.$store.state.auth.user.user_id}/`, formProfile,
+                data = await this.$axiosAPI.put( `profile/customer/${this.$store.state.auth.user.user_id}/`, formProfile,
                     token ? { 'Authorization': token } : {}
                 )
             }
@@ -179,6 +182,7 @@ export default {
             let {address, ...newData} = data
             Object.keys(address).forEach( element => newData[element] = address[element] )
             this.resProfile = newData
+            console.log("resProfile: ", this.resProfile)
 
             let toTop = document.querySelector('#toTop')
             if(toTop) {

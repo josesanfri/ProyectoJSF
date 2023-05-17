@@ -15,6 +15,10 @@
         "text": "Perfil",
         "label": "link-panel"
     },
+    "panelreserve": {
+        "text": "Reservas",
+        "label": "link-panel-reserve"
+    },
     "login": {
         "text": "Iniciar sesión"
     },
