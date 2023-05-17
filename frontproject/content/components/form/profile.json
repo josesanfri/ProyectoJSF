@@ -83,24 +83,24 @@
                     "text": "Género",
                     "id": "customer_gender",
                     "name": "gender",
-                    "type": "text",
+                    "type": "select",
                     "form": "profileForm",
+                    "items": [
+                        {
+                            "value": "M",
+                            "text": "Hombre"
+                        },
+                        {
+                            "value": "F",
+                            "text": "Mujer"
+                        },
+                        {
+                            "value": "O",
+                            "text": "Otro"
+                        }
+                    ],
                     "attrs": {
-                        "flexColumn": true,
-                        "list": [
-                            {
-                                "value": "M",
-                                "text": "Hombre"
-                            },
-                            {
-                                "value": "F",
-                                "text": "Mujer"
-                            },
-                            {
-                                "value": "o",
-                                "text": "Otro"
-                            }
-                        ]
+                        "flexColumn": true
                     }
                 },
                 {
@@ -234,7 +234,7 @@
         "type": "submit",
         "text": "Guardar",
         "attrs": {
-            "isPink": true
+            "isBlue": true
         }
     }
 }

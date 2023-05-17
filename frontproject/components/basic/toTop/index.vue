@@ -25,8 +25,8 @@ props: {
         type: Object,
         required: false,
         default: () => ({
-            isPink: true,
-            isBlue: false
+            isPink: false,
+            isBlue: true
         })
     }
 },

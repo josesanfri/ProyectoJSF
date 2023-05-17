@@ -90,7 +90,7 @@
                 </article>
 
                 <form @submit.prevent="submitLogin" id="formLogin" class="popup-nav-content-login">
-                    <p style="color: #e1488e">                        
+                    <p style="color: #5da9ff">                        
                         {{signInText.form.title}}
                     </p>
                     <basic-input
@@ -107,13 +107,18 @@
                         :id="'form-password-login'"
                         :form="'formLogin'"
                     />
-                    <button type="submit" class="shadow rounded w-full" style="display: block; margin: auto; margin-top: 1rem; border: 0; padding: .5rem; background: #e1488e; color: white;">
-                        {{signInText.form.btnText}}
-                    </button>
+                    <basic-button-solid 
+                        :type="'submit'"
+                        class="shadow rounded w-full"
+                        :text="signInText.form.btnText"
+                        :attrs="{
+                            isBlue: true
+                        }"
+                    />
                 </form>
                 
                 <form @submit.prevent="submitLogup" id="formLogup" class="popup-nav-content-signup">
-                    <p  style="color: #e1488e;">
+                    <p  style="color: #5da9ff;">
                         {{signUpText.title}}
                     </p>
                     <input type="email" style="display: block; margin: 1rem 0; width: 100%;" form="formLogup" :placeholder="signUpText.inputs[1]" name="email" id="form-email-logup">
@@ -226,7 +231,7 @@
                         class="shadow rounded w-full"
                         :text="signUpText.btnSignup"
                         :attrs="{
-                            isPink: true
+                            isBlue: true
                         }"
                     />
                 </form>

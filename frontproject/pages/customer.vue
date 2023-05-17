@@ -6,7 +6,7 @@
 import getToken from '~/utils/token/getToken'
 
 export default {
-  layout: 'web/index',
+  layout: 'customer/index',
   scrollToTop: true,
   async asyncData(ctx) {
     let {redirect, $axiosAPI, $axiosIntern, store} = ctx

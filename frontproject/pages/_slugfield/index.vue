@@ -43,7 +43,7 @@
                     class="p-4 block"
                     v-for="menu in menuData"
                     :key="menu.id"
-                    :href="'/'+menu.id+'/menu/'"
+                    :href="'/menu/'+menu.id+'/'"
                     :label="'link-restaurant-'+menu.id"
                     :text="menu.name"
                     :attrs="{
@@ -134,7 +134,6 @@
 <script>
 import textSlug from '~/content/pages/slugfield/restaurant.json'
 import getToken from '~/utils/token/getToken'
-import moment from 'moment'
 
 export default {
     async asyncData(ctx) {
@@ -183,7 +182,7 @@ export default {
                 titlePage: `${restaurantData.address.street}, ${restaurantData.address.number}, ${restaurantData.address.region}`,
             }
         } catch {
-            redirect(localePath('/error/ups/'))
+            redirect('/error/ups/')
         }
     },
     head() {

@@ -64,11 +64,6 @@ class RetrieveUpdateDestroyCustomerProfileView(RetrieveUpdateDestroyAPIView):
         return Response(data=data, status=status.HTTP_200_OK)
 
     def get_serializer(self, *args, **kwargs):
-        """We need to parse self.request.data in case it is a dict or a querydict
-
-        Returns:
-            ModelSerializer: serializer for Renter Profile
-        """
         instance = self.get_object()
         
         if self.request.method == 'PUT':

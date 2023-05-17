@@ -1,17 +1,6 @@
 <template>
     <section class="card-restaurant">
         <section class="card-restaurant-section">
-            <figure v-if="data.media_restaurant.length > 0">
-                <picture class="flex">
-                    <nuxt-img
-                        class="img-basic"
-                        decoding="async"
-                        loading="lazy"
-                        :src="data.media_restaurant[0].image"
-                        :alt="data.media_restaurant[0].image"
-                    />
-                </picture>
-            </figure>
             <article>
                 <hgroup>
                     <basic-link
