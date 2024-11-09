@@ -59,10 +59,22 @@
 - Backend Steps
    - Recommended python 3.10
    - Configure the core/settings/local.py file with your database data
+   - Create a virtual environment
+
+      ```bash
+        python -m venv envback
+      ```
+
    - Turn on the virtual environment
 
       ```bash
         envback\Scripts\activate.bat
+      ```
+    
+    - Install requirements
+    
+      ```bash
+        pip install -r requirements.txt
       ```
       
    - Create the migrations
